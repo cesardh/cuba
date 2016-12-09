@@ -24,7 +24,7 @@ h1 {
     #principal .seccion:nth-child(odd) {
       background: white; }
     #principal .seccion:first-child {
-      background: linear-gradient(to right, rgba(61, 255, 148, 0.5) 0%, rgba(255, 211, 122, 0.5) 100%), url("../img/tiza1.JPG");
+      background: linear-gradient(to right, rgba(61, 255, 148, 0.5) 0%, rgba(255, 211, 122, 0.5) 100%), url("../images/tiza1.JPG");
       background-size: cover; }
     #principal .seccion .contenedor {
       width: 600px;
