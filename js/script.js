@@ -1,3 +1,14 @@
+// function launchFullScreen(element) {
+//   if(element.requestFullScreen) {
+//     element.requestFullScreen();
+//   } else if(element.mozRequestFullScreen) {
+//     element.mozRequestFullScreen();
+//   } else if(element.webkitRequestFullScreen) {
+//     element.webkitRequestFullScreen();
+//   }
+// }
+// launchFullScreen(document.documentElement);
+
 $(document).ready(function() {
   var $capBtn = $('nav>ul>li')
   var $pr = $('#principal')
@@ -6,6 +17,7 @@ $(document).ready(function() {
   $capBtn.click(function(e) {
 
     if(this == $capBtn[0]){
+
       $($sec[0]).stop().slideDown(1500)
       $($sec[1]).stop().slideUp(2000)
     }else if (this == $capBtn[1]) {
