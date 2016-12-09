@@ -7,9 +7,10 @@ $cont1 : 600px
 $cont2 : 900px
 
 body
+  background: #e5ffb7
 
 h1
-  font-size: 2.7em
+  font-size: 2.8em
   font-family: 'Merriweather', serif
   font-weight: 900
   color: white
@@ -31,9 +32,6 @@ h1
       display: none
     &:nth-child(odd)
       background: white
-    &:first-child
-      background: linear-gradient(to right, hsla(147, 100%, 62%, 0.5) 0%, hsla(40, 100%, 74%, 0.5) 100%), url("../images/tiza1.JPG"), rgba(0,0,0, 0.5)
-      background-size: cover
 
     .contenedor
       width: $cont1
@@ -66,12 +64,25 @@ h1
 
   #prologo
     display: block
+    background: linear-gradient(to right, hsla(147, 100%, 62%, 0.5) 0%, hsla(40, 100%, 74%, 0.5) 100%), url("../images/tiza1.JPG"), rgba(0,0,0, 0.5)
+    background-size: cover
+    .contenedor
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translateX(-50%) translateY(-50%)
+
     .titulo
-      margin-top: 200px
       color: black
       opacity: 0.7
+    p
+      text-align: left
+      font-size: 1em
 
   #cap1
+    p
+      text-align: left
+      width: 320px
     .efecto
       height: 100%
       width: 100%

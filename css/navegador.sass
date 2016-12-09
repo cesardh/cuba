@@ -10,7 +10,7 @@ nav
     height: 10px
 
     li
-      transition: filter 3s ease
+      transition: filter 1s ease
       float: left
       margin: 20px
       width: 20px
@@ -19,6 +19,8 @@ nav
       background: #CDDC39
       font-size: 0
       position: relative
+      &:first-child
+        background: #D3D89F
 
       &:hover
         filter: brightness(250%) hue-rotate(80deg)
