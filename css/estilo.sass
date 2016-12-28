@@ -1,3 +1,4 @@
+@import capitulos
 *
   box-sizing: border-box
   margin: 0
@@ -43,7 +44,7 @@ h1
   height: 100%
 
   .seccion
-    background: black
+    //background: black
     width: inherit
     height: inherit
     position: absolute
@@ -69,20 +70,16 @@ h1
     .fondo
       width: 100%
       position: relative
-      img
+      img, video
         width: 100%
-        filter: brightness(60%)
-      video
-        width: 100%
-        filter: grayscale(1)
-        opacity: 0.5
+        filter: brightness(60%) grayscale(1)
 
     .capitulo
       margin: 80vh 0 20vh 0
 
 
 
-  #prologo
+  #cap0
     display: block
     background: linear-gradient(to right, hsla(147, 100%, 62%, 0.5) 0%, hsla(40, 100%, 74%, 0.5) 100%), url("../images/tiza1.JPG"), rgba(0,0,0, 0.5)
     background-size: cover
@@ -136,6 +133,9 @@ h1
       left: 0
       right: 0
       z-index: 10
+      perspective: 100px
+      transform: translateZ(300px)
+
 
 .separar
   position: relative

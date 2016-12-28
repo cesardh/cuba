@@ -11,19 +11,13 @@
 
 $(document).ready(function() {
   var $capBtn = $('nav>ul>li')
-  var $pr = $('#principal')
-  var $sec = $('.seccion')
+  var $sec = $('#principal>.seccion')
+  console.log($sec);
 
   $capBtn.click(function(e) {
-
-    if(this == $capBtn[0]){
-
-      $($sec[0]).stop().slideDown(1500)
-      $($sec[1]).stop().slideUp(2000)
-    }else if (this == $capBtn[1]) {
-      $($sec[1]).stop().slideDown(1500)
-      $($sec[0]).stop().slideUp(2000)
-    }
+    var index = $capBtn.index(this);
+    $(".activo").stop().slideUp(2000).toggleClass('activo');
+    $($sec[index]).stop().slideDown(2000).toggleClass('activo');
 
   });
 
