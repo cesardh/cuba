@@ -9,8 +9,12 @@ $cont2 : 900px
 body
   background: #e5ffb7
 
+  >svg
+    display: none
+
 
 #mensaje
+  display: none
   width: 285px
   position: fixed
   padding: 37px
@@ -22,6 +26,10 @@ body
   box-shadow: 5px 5px rgba(0, 0, 0, 0.28)
   font-family: "Open Sans", sans-serif
   color: rgb(46, 27, 0)
+  opacity: 0.8
+  transition: opacity 500ms ease
+  &:hover
+    opacity: 0.05
 
 h1
   font-size: 2.8em
@@ -63,7 +71,7 @@ h1
       position: relative
       img
         width: 100%
-        filter: brightness(70%)
+        filter: brightness(60%)
       video
         width: 100%
         filter: grayscale(1)
