@@ -10,6 +10,11 @@
 // launchFullScreen(document.documentElement);
 
 $(document).ready(function() {
+
+  $(window).load(function(){
+    $("#load").delay(1000).fadeOut(1000);
+  });
+  
   var $capBtn = $('nav>ul>li')
   var $sec = $('#principal>.seccion')
 
@@ -21,4 +26,5 @@ $(document).ready(function() {
     $($sec[index]).stop().slideDown(2000).toggleClass('activo');
 
   });
+
 });
