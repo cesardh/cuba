@@ -1,3 +1,62 @@
-@for $i from 0 through 7
-  #cap#{$i}
-    background: rgb(255 - $i*50, (255/7) * $i , 255)
+#cap1
+  perspective: 100px
+  perspective-origin: 50% 71vh
+  .capitulo
+    transform: translateZ(-400px) scale(5)
+
+#cap1-p1
+  p
+    bottom: -100px
+    transform: scale(3) rotateY(20grad) translateX(-2px)
+    opacity: 0
+
+#cap1-p2
+
+  #retratos
+    position: absolute
+    div
+
+      left: 0
+      right: 0
+      width: 190px
+      height: 190px
+      border-radius: 50%
+      background-image: url(../images/retratos.JPG)
+      background-size: 380px
+      display: inline-block
+      &:hover
+        background-position-x: -190px
+      &:nth-child(3)
+        background-position-y: -190px
+
+
+  p:nth-child(3)
+    opacity: 0
+    bottom: 150px
+    width: 100% !important
+    transform: translatey(-400px) rotateX(-15grad)
+  .animacion
+    img:nth-child(1)
+      height: 100px
+      width: auto
+      left: 450px
+      transform: translateZ(40px)
+    img:nth-child(2)
+      height: 100px
+      width: auto
+      left: 200px
+      top: -25px
+      transform: translateZ(0px)
+    img:nth-child(3)
+      height: 100px
+      width: auto
+      left: -20px
+      top: 80px
+      transform: translateZ(-20px) scale(3)
+
+    img:nth-child(4)
+      height: 100px
+      width: auto
+      left: -500px
+      transform: translateX(0vw)
+      opacity: 1 !important
