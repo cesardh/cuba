@@ -1,39 +1,81 @@
+// @for $i from 1 through 7
+//   #cap#{$i}
+//     transform: scale(0)
+//     opacity: 0
+//     display: none
+// #principal
+//   perspective: 1000px
 #cap1
   perspective: 100px
-  perspective-origin: 50% 71vh
+  perspective-origin: 50% 71%
   .capitulo
     transform: translateZ(-400px) scale(5)
 
 #cap1-p1
+  .contenedor
+    top: calc(100% + 50px) !important
   p
-    bottom: -100px
-    transform: scale(3) rotateY(20grad) translateX(-2px)
+    transform: scale(3) rotateY(20grad)
     opacity: 0
 
 #cap1-p2
 
   #retratos
-    position: absolute
+    display: flex
+    justify-content: space-around
+    perspective: 1000px
     div
-
-      left: 0
-      right: 0
-      width: 190px
-      height: 190px
+      position: relative
+      width: 160px
+      height: 160px
+      margin: 100px 0
       border-radius: 50%
       background-image: url(../images/retratos.jpg)
-      background-size: 380px
+      background-size: calc(100% * 2)
       display: inline-block
+      opacity: 0
+      transform: translateZ(40px) translateY(50px) rotateY(90grad)
+      transition: transform 1s $outback, opacity 1s ease
+      &.anim
+        transform: translateZ(0px) translateY(0px) rotateY(0grad)
+        opacity: 1
+        @for $i from 1 through 3
+          &:nth-child(#{$i})
+            transition-delay: 200ms * $i
+
       &:hover
-        background-position-x: -190px
+        background-position-x: -100%
+        border: $tomate solid 10px
+        cursor: pointer
+        &::before
+          content: "clic me"
+          position: absolute
+          left: -20px
+          background: $tomate
+          padding: 10px
+          border-radius: 10px
+          color: white
+          font-family: inherit
       &:nth-child(3)
-        background-position-y: -190px
+        background-position-y: -100%
+      p
+        transition: top 500ms ease, opacity 300ms
+        opacity: 0
+        position: absolute
+        width: 150%
+        margin: 0 auto
+        top: -100%
+        margin-top: 20px
+        left: 50%
+        transform: translateX(-50%)
+        font-size: 0.9em
+        padding: 16px
+        background: $tomate
+        border-radius: 7px
+        z-index: 1000
 
-
-  p:nth-child(3)
+  .t2
     opacity: 0
-    bottom: 150px
-    width: 100% !important
     transform: translatey(-400px) rotateX(-15grad)
   .animacion
     img:nth-child(1)
@@ -55,7 +97,7 @@
       transform: translateZ(-20px) scale(3)
 
     img:nth-child(4)
-      height: 100px
+      height: 170px
       width: auto
       left: -500px
       transform: translateX(0vw)
