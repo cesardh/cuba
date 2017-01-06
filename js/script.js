@@ -76,8 +76,8 @@ $(document).ready(function() {
   $("#cap1").scroll(function(){
     if ($("#cap1-p3").hasClass('actAudio') && $video_p3.volume < 0.3) {
       $video_p3.volume += 0.005
-    }else if ($video_p3.volume >= 0) {
-      $video_p3.volume -= 0.03
+    }else if ($video_p3.volume > 0) {
+      $video_p3.volume -= 0.02
     }
   });
 
