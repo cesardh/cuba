@@ -11,10 +11,11 @@
   .capitulo
     transform: translateZ(-400px) scale(5)
   .contenedor
+    &.frontal
+      top: 50% !important
+      transform: translateZ(50px) scale(0.5)
     h1
       position: relative
-      top: 50%
-      transform: translateZ(50px) scale(0.5)
       font-size: 5em
       &::before
         transition: width 3s ease, opacity 2s
@@ -124,3 +125,7 @@
       left: -500px
       transform: translateX(0vw)
       opacity: 1 !important
+
+#cap1-p3
+  video
+    filter: brightness(1.2) grayscale(1) !important

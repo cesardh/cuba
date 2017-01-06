@@ -10,10 +10,12 @@
 // launchFullScreen(document.documentElement);
 
 $(document).ready(function() {
-
+  var $audioFondo = $("audio")[0];
   $(window).load(function(){
     $("#load").delay(1000).fadeOut(1000);
+    $audioFondo.play();
   });
+  animaciones()
 
   $(".seccion").niceScroll({
     scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false
@@ -66,6 +68,17 @@ $(document).ready(function() {
       opacity: 0,
       top: "-100%"
     });
-  });;
+  });
+
+  var $video_p3 = $('#cap1-p3 video')[0]
+  $video_p3.volume = 0;
+
+  $("#cap1").scroll(function(){
+    if ($("#cap1-p3").hasClass('actAudio') && $video_p3.volume < 0.3) {
+      $video_p3.volume += 0.005
+    }else if ($video_p3.volume >= 0) {
+      $video_p3.volume -= 0.03
+    }
+  });
 
 });
