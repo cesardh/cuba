@@ -29,3 +29,9 @@ new ScrollMagic.Scene({
 })
 .setClassToggle("#retratos div", "anim")
 .addTo(control);
+
+new ScrollMagic.Scene({
+	triggerElement: "#cap1-p3", triggerHook: 0.2
+})
+.setClassToggle("#cap1-p3 h1", "anim")
+.addTo(control);
