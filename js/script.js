@@ -52,10 +52,14 @@ $(document).ready(function() {
       $capBtn.removeClass('activo');
       $(this).addClass('activo');
       $(".seccion.activo").stop().slideUp(2000).toggleClass('activo');
-      $($sec[index]).stop().slideDown(2000, function(){enAnim=false}).toggleClass('activo');
+      $($sec[index]).stop()
+      .slideDown(2000, function(){
+        enAnim=false
+      })
+      .toggleClass('activo');
       if (index > 1 && !$audioFondo.paused) {
         apagarAudio($audioFondo)
-      }else if($audioFondo.paused && index > 1){
+      }else if($audioFondo.paused && index <= 1){
         encenderAudio($audioFondo)
       }
     //   $(".seccion.activo")
@@ -106,5 +110,5 @@ $(document).ready(function() {
     }
     $video_p3.volume = vol
   });
-  
+
 });
