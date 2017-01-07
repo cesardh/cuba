@@ -27,3 +27,318 @@
 <p>Sharing: We agreed on our lessons learned and shared them via blogs, a photo book of recommendations and in international conferences.</p>
 
 <p>So we wanted to create a space for young leaders to connect with each other, and create synergies.</p>
+
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand" class="page-scroll">
+        <a href="#myCarousel">Mapa</a>
+        <titulo>Lideres</titulo>
+      </a>
+    </li>
+    <h3>Creadores <br>Estos lideres estan incluidos por sus contribuciones ambientales, politicas que permiten el desarrollo del entorno en el que se encuentran</h3>
+    <li>
+
+      <a href="#myCarousel" data-slide-to="0">Handy</a>
+
+
+    </li>
+    <li>
+
+      <a href="#myCarousel" data-slide-to="1">Roydes</a>
+
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="2">El Pollo</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="3">Roberto</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="4">Maria Silvia</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="5">Liliet</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="6">Saily</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="7">Roxana</a>
+    </li>
+    <li>
+      <a href="#myCarousel" data-slide-to="8">Dailenis</a>
+    </li>
+  </ul>
+</div>    <div class="principal">
+  <div class="seccion"></div>
+  <div class="hidden-md seccion"></div>
+  <!-- mapa -->
+
+  <div class="fondo" id="handy">
+    <div id="page-content-wrapper">
+
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
+          <li data-target="#myCarousel" data-slide-to="8"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12 hidden-md">
+                  <h1>Handy</h1>
+                  <img src="images/handy.jpg">
+                  <p>was selected in the program because of his leadership in youth engagement in
+
+                    environmental work in Cuba. <br>He was working on creating a community of practice around
+
+                    the environment to connect Cuban and international professionals</p>
+
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="item" id="roydes">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12 hidden-md">
+                    <h1>Roydes</h1>
+                    <img src="images/Roydes.jpg" width="253" height="370">
+                    <p>Roydes and his friends have been trying to encourage the local government to
+
+                      pick up trash more frequently.<br> Meanwhile, he believes that environmental sustainability
+
+                      is a matter of mentality: ‘people need to feel more connected to the environment, and <br>
+
+                      feel the need to keep it as clean as they keep their houses.</p>
+
+                      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item" id="pollo">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-lg-12 hidden-md">
+                      <h1>El pollo Villa clara</h1>
+                      <img src="images/pollo.jpg" width="370" height="253">
+                      <p>He’s 29 and the lead singer of a Cuban punk rock-band called ‘Aditox’. On the<br>
+
+                        first day of workshop he and his band-mate ‘Yoyo’ were the first to participate in a <br>
+
+                        playback theater opening exercise. They told the story of how they rode on the back of a <br>
+
+                        garbage truck to get to a show.<br>
+
+                        Maybe it’s silly to say, but it’s a metaphor for his participation in the Santa <br>
+
+                        Clara workshop series. You might not expect Pollo to take part in a climate change <br>
+
+                        workshop – but after meeting him you get a sense he is up for anything if he believes <br>
+
+                        ultimately has a point.  <br>
+
+                        For him team work + environment = change
+                        - the kind of change that he sees possible<br> by responding to the root of the <br>
+
+                        problem and not its consequences.</p>
+
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="item" id="roberto">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-12 hidden-md">
+                        <h1>Roberto</h1>
+                        <img src="images/roberto.jpg" width="253" height="370">
+                        <p>Roberto is committed to creating an exposition of 13 paintings to make people<br>
+
+                          ‘feel’ climate change and address the problematic consequences of young people being<br>
+
+                          disengaged from the environment.
+                          The first piece of his series (showcased here) is titled: ‘Putting a good face <br>
+
+                          to the weather’. It reflects his observation that Cubans often simply ‘put a good face <br>
+
+                          on’ despite the growing number of tragic and fatal phenomena caused by climate <br>
+
+                          change.</p>
+
+                          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item" id="maria">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-lg-12 hidden-md">
+                          <h1>Maria Silvia</h1>
+                          <img src="images/maria.jpg" width="300" height="370">
+                          <p>is an independent, inquiring, somewhat quiet girl who plays the guitar and loves
+
+                            listening to Celtic music. She has a passion for the outdoors and animals of all sorts.
+
+                            Along with her sister, Marisol, Maria Silvia has been involved in her family’s
+
+                            urban permaculture project for close to 14 years now.
+
+                            The two sisters and their parents have transformed a community garbage dump in
+
+                            Havana known as ‘Los Piños’, into a charming finca – a piece of extremely fertile land
+
+                            where a variety of native trees and shrubs now grow freely and provide compost for
+
+                            future generations of plants.</p>
+
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item" id="liliet">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-lg-12 hidden-md">
+                            <h1>Liliet</h1>
+                            <img src="images/liliet.jpg" width="300" height="370">
+                            <p>Liliet is a real character. She is generally the fastest one to crack a joke and
+
+                              has an endless quantity of sarcasm and humour. She comes across as an easy-going, witty
+
+                              20 years old.<br>
+
+                              Liliet told us that she believes in ‘carpe diem’, in living life to the fullest.
+                              She explained that everything that she does is dedicate to creating a ‘cambio
+
+                              real’, ‘real change’.<br>
+
+                              At this point I was expecting her to talk about the environment. Instead, she
+
+                              points to the heart in her drawing, where she had written ‘mi hermana’, ‘my sister’.<br>
+
+                              Everything in relationship to her environmental work, at home or at university
+
+                              is to create ‘real change within her house’.<br></p>
+
+                              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item" id="saily">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-lg-12 hidden-md">
+                              <h1>Saily</h1>
+                              <img src="images/saily.jpg" width="253" height="370">
+                              <p>Participante activa de nuestro encuentro Creadores de soluciones en sus comunidades</p>
+
+                              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item" id="roxana">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-lg-12 hidden-md">
+                              <h1>Roxana</h1>
+                              <img src="images/roxana.jpg" width="253" height="370">
+                              <p>Roxana´s life philosophy is: Learn from the past. The future is uncertain,
+
+                                so don´t lose time thinking too much about what will happen. Live intensively in the
+
+                                present, and make sure that every day you do something that makes you happy.
+
+                                What brings happiness and a fulfillment to Roxana more than anything else is helping and
+
+                                sharing with others. She would tell you: “Share what you have with people around you.
+
+                                Every day, try making someone else feel special and important”</p>
+
+                                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="item" id="dailenis">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-lg-12 hidden-md">
+                                <h1>Dailenis</h1>
+                                <img src="images/dailenis.jpg" width="253" height="370">
+                                <p> First of all, Dailenis co-manages an environmental awareness project for
+
+                                  children living in rural Santiago neighborhoods. She helped to secure support for this
+
+                                  initiative from a local church, but explains that one really doesn't need too many
+
+                                  resources to inspire kids. A story book, paper and some crayons would suffice, says
+
+                                  Dailenis.
+
+                                  She is also involved with a knowledge sharing initiative through which the more
+
+                                  organized farmers transmit their techniques for organically based farming, recycling and
+
+                                  group marketing activities to the more isolated, less organized farmers, who also tend
+
+                                  to rely more heavily on chemicals.
+
+                                  To add to her accomplishments, Dailenis also spearheads a group of other young
+
+                                  biologists who organize workshops for the general public about alternative energy ideas,
+
+                                  recycling and garbage management strategies in Santiago.</p>
+
+                                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"> Menu</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
