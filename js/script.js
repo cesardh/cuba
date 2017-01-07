@@ -55,7 +55,7 @@ $(document).ready(function() {
       $($sec[index]).stop().slideDown(2000, function(){enAnim=false}).toggleClass('activo');
       if (index > 1 && !$audioFondo.paused) {
         apagarAudio($audioFondo)
-      }else if($audioFondo.paused && index > 1){
+      }else if($audioFondo.paused && index <= 1){
         encenderAudio($audioFondo)
       }
     //   $(".seccion.activo")
