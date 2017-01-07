@@ -10,7 +10,7 @@
 // launchFullScreen(document.documentElement);
 function apagarAudio(audio){
   var reducir = setInterval(function(){
-    audio.volume -= 0.03;
+    audio.volume -= 0.02;
     if (audio.volume <= 0.05) {
       audio.pause()
       clearInterval(reducir)
@@ -55,7 +55,7 @@ $(document).ready(function() {
       $($sec[index]).stop().slideDown(2000, function(){enAnim=false}).toggleClass('activo');
       if (index > 1 && !$audioFondo.paused) {
         apagarAudio($audioFondo)
-      }else if($audioFondo.paused && index <= 1){
+      }else if($audioFondo.paused && index > 1){
         encenderAudio($audioFondo)
       }
     //   $(".seccion.activo")
@@ -96,13 +96,15 @@ $(document).ready(function() {
 
   var $video_p3 = $('#cap1-p3 video')[0]
   $video_p3.volume = 0;
-
   $("#cap1").scroll(function(){
-    if ($("#cap1-p3").hasClass('actAudio') && $video_p3.volume < 0.3) {
-      $video_p3.volume += 0.005
-    }else if ($video_p3.volume > 0) {
-      $video_p3.volume -= 0.02
+    var vol = $video_p3.volume
+    if ($("#cap1-p3").hasClass('actAudio') && vol < 0.3) {
+      vol += 0.005
+    }else if (vol >= 0.05) {
+      vol -= 0.005
+      if (vol <= 0.05) {vol = 0}
     }
+    $video_p3.volume = vol
   });
-
+  
 });
