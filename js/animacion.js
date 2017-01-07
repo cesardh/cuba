@@ -35,6 +35,5 @@ function animaciones(){
 
 	new ScrollMagic.Scene({triggerElement: "#cap1-p3", duration: "120%"})
 	.setClassToggle("#cap1-p3", "actAudio")
-	.addIndicators()
 	.addTo(control);
 }

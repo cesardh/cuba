@@ -8,6 +8,25 @@
 //   }
 // }
 // launchFullScreen(document.documentElement);
+function apagarAudio(audio){
+  var reducir = setInterval(function(){
+    audio.volume -= 0.03;
+    if (audio.volume <= 0.05) {
+      audio.pause()
+      clearInterval(reducir)
+    }
+  }, 100)
+}
+function encenderAudio(audio){
+  audio.play();
+  var aumentar = setInterval(function(){
+    audio.volume += 0.02;
+    if (audio.volume >= 0.95) {
+      clearInterval(aumentar)
+      audio.volume = 1;
+    }
+  }, 100)
+}
 
 $(document).ready(function() {
   var $audioFondo = $("audio")[0];
@@ -34,6 +53,11 @@ $(document).ready(function() {
       $(this).addClass('activo');
       $(".seccion.activo").stop().slideUp(2000).toggleClass('activo');
       $($sec[index]).stop().slideDown(2000, function(){enAnim=false}).toggleClass('activo');
+      if (index > 1 && !$audioFondo.paused) {
+        apagarAudio($audioFondo)
+      }else if($audioFondo.paused && index <= 1){
+        encenderAudio($audioFondo)
+      }
     //   $(".seccion.activo")
     //     .toggleClass('activo')
     //     .velocity({
