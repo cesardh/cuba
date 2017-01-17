@@ -8,6 +8,7 @@
 //   }
 // }
 // launchFullScreen(document.documentElement);
+
 function apagarAudio(audio){
   var reducir = setInterval(function(){
     audio.volume -= 0.02;
@@ -35,10 +36,12 @@ $(document).ready(function() {
     $audioFondo.play();
   });
   animaciones()
-
-  $(".seccion").niceScroll({
-    scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false
-  });
+  var arrSeccion = [$("#cap1"), $("#cap3")];
+  for (var i = 0; i < arrSeccion.length; i++) {
+    arrSeccion[i].niceScroll({
+      scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false
+    });
+  }
 
   var $capBtn = $('nav>ul>li');
   var $sec = $('#principal>.seccion');
@@ -62,26 +65,6 @@ $(document).ready(function() {
       }else if($audioFondo.paused && index <= 1){
         encenderAudio($audioFondo)
       }
-    //   $(".seccion.activo")
-    //     .toggleClass('activo')
-    //     .velocity({
-    //       scaleX: 0,
-    //       opacity: 0
-    //     }, {
-    //       duration: 2000,
-    //       display: "none"
-    //     });
-    //
-    //   $("#cap"+index+"")
-    //     .velocity({
-    //       scaleX: 1,
-    //       opacity: 1
-    //     }, {
-    //       duration: 2000,
-    //       display: "block",
-    //       complete: function(){enAnim=false}
-    //     })
-    //     .toggleClass('activo');
     }
   });
 

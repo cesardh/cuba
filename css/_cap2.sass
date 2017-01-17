@@ -1,0 +1,31 @@
+#cap2
+  overflow: hidden !important
+  .contenedor
+    width: 100% !important
+    position: relative
+    overflow: hidden
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+    img
+      width: 100%
+    div
+      width: 20px
+      height: 20px
+      background: white
+      transform: translateX(-50%) translateY(-50%) rotate(50grad)
+      position: absolute
+      transition: transform 1s ease
+      &:hover
+        cursor: pointer
+        transform: translateX(-50%) translateY(-50%) rotate(350grad) scale(1.7)
+
+      &:nth-child(2)
+        top: 29%
+        left: 19.6%
+      &:nth-child(3)
+        top: 39%
+        left: 45.5%
+      &:nth-child(4)
+        top: 76.3%
+        left: 83.1%

@@ -36,4 +36,16 @@ function animaciones(){
 	new ScrollMagic.Scene({triggerElement: "#cap1-p3", duration: "120%"})
 	.setClassToggle("#cap1-p3", "actAudio")
 	.addTo(control);
+
+	var imgs = $(".contenedor>img", "#cap1-p3")
+	imgs.push($("contenedor>.tuerca", "#cap1-p3")[0])
+	for (var i = 0; i < imgs.length; i++) {
+		new ScrollMagic.Scene({
+			triggerElement: "#cap1-p3 .trig" +  (i+1),
+			duration: "150px",
+			triggerHook: 0.7
+		})
+		.setClassToggle("#cap1-p3 .targ" + (i+1), "mostrar")
+		.addTo(control);
+	}
 }
