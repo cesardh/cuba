@@ -94,4 +94,9 @@ $(document).ready(function() {
     $video_p3.volume = vol
   });
 
+  var $explorar = $(".intro .mns-auxiliar", "#cap2");
+  $explorar.click(function(event) {
+    $(".intro", "#cap2").fadeOut('slow');
+  });
+
 });
