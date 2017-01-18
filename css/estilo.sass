@@ -2,6 +2,7 @@
 @import atajos
 @import cap1
 @import cap2
+@import cap3
 
 =linearGradient($dir, $color1, $color2)
   background: $color1
@@ -177,3 +178,27 @@ p
   color: black
   width: 100%
   text-align: center
+
+.intro
+  width: 100%
+  height: 100%
+  background: black
+  z-index: 3
+  position: absolute
+  .capitulo
+    bottom: 50vh !important
+  p
+    position: absolute
+    width: $cont1
+    left: 0
+    right: 0
+    margin: 0 auto
+    bottom: 35vh
+  .mns-auxiliar
+    bottom: 25vh
+    cursor: pointer
+    text-decoration: underline
+    transition: color 500ms ease
+    &:hover
+      color: $tomate
+      opacity: 1

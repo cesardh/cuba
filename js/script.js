@@ -36,7 +36,7 @@ $(document).ready(function() {
     $audioFondo.play();
   });
   animaciones()
-  var arrSeccion = [$("#cap1"), $("#cap3")];
+  var arrSeccion = [$("#cap1")];
   for (var i = 0; i < arrSeccion.length; i++) {
     arrSeccion[i].niceScroll({
       scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false
@@ -46,6 +46,8 @@ $(document).ready(function() {
   var $capBtn = $('nav>ul>li');
   var $sec = $('#principal>.seccion');
   var enAnim = false;
+  var videoPaisaje = $("#paisaje")[0];
+  var videoViaje = $("#viajeVid")[0];
 
   $capBtn.click(function(e) {
     if(!enAnim && !$(this).hasClass('activo'))
@@ -60,11 +62,14 @@ $(document).ready(function() {
         enAnim=false
       })
       .toggleClass('activo');
+
       if (index > 1 && !$audioFondo.paused) {
         apagarAudio($audioFondo)
       }else if($audioFondo.paused && index <= 1){
         encenderAudio($audioFondo)
       }
+      if(index == 1){videoViaje.play()}else{videoViaje.pause()}
+      if(index == 3){videoPaisaje.play()}else{videoPaisaje.pause()}
     }
   });
 
@@ -94,9 +99,9 @@ $(document).ready(function() {
     $video_p3.volume = vol
   });
 
-  var $explorar = $(".intro .mns-auxiliar", "#cap2");
+  var $explorar = $(".intro .mns-auxiliar");
   $explorar.click(function(event) {
-    $(".intro", "#cap2").fadeOut('slow');
+    $(this).parent().fadeOut('slow');
   });
 
   var $loc = $(".locacion", "#cap2")
@@ -107,6 +112,8 @@ $(document).ready(function() {
   });
   $loc.click(function(event) {
     var index = $loc.index(this)
+    $loc.removeClass('abrir');
+    $inv.removeClass('mostrar');
     $(this).addClass('abrir');
     $($inv[index]).addClass('mostrar')
   })
