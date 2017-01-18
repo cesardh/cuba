@@ -2,9 +2,61 @@
   overflow: hidden !important
   video
     width: 110%
+    position: absolute
+    filter: brightness(0.7)
   .intro
     background: linear-gradient(left, rgb(181, 60, 60) 0%, rgb(205, 193, 129) 100%)
     overflow: hidden
     >video
       opacity: 0.4
       filter: brightness(0.5) grayscale(0)
+  #dibujos
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 800px
+    height: 600px
+    transform: translateX(-50%) translateY(-50%)
+    >.elem
+      position: absolute
+      opacity: 0
+      cursor: pointer
+      transition: opacity 1s ease
+      &:hover
+        opacity: 1
+
+      &.arbol
+        left: 393px
+        top: 133px
+        background-color: rgba(108, 210, 0, 0.4)
+        -webkit-mask-image: url("../images/arbol.png")
+        width: 356px
+        height: 416px
+      &.sol
+        left: 154px
+        top: -8px
+        background-color: rgba(237, 255, 0, 0.28)
+        -webkit-mask-image: url("../images/sol.png")
+        width: 208px
+        height: 175px
+      &.nube
+        left: 8px
+        top: 169px
+        background-color: rgba(0, 194, 255, 0.28)
+        -webkit-mask-image: url("../images/f-nube1.png")
+        width: 286px
+        height: 113px
+      &.grupo
+        left: 357px
+        top: 352px
+        background-color: rgba(255, 200, 115, 0.58)
+        -webkit-mask-image: url("../images/f-grupo.png")
+        width: 170px
+        height: 142px
+      &.choza
+        left: 29px
+        top: 268px
+        background-color: rgba(210, 116, 33, 0.68)
+        -webkit-mask-image: url("../images/f-choza.png")
+        width: 335px
+        height: 245px
