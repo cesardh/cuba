@@ -99,4 +99,16 @@ $(document).ready(function() {
     $(".intro", "#cap2").fadeOut('slow');
   });
 
+  var $loc = $(".locacion", "#cap2")
+  var $inv = $(".invest", "#cap2")
+  $(".cerrar", "#cap2").click(function(event) {
+    $loc.removeClass('abrir');
+    $inv.removeClass('mostrar');
+  });
+  $loc.click(function(event) {
+    var index = $loc.index(this)
+    $(this).addClass('abrir');
+    $($inv[index]).addClass('mostrar')
+  })
+
 });
