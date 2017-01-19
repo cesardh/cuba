@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Open+Sans:400,600i,700')
 @import atajos
-@import cap1
-@import cap2
-@import cap3
+@import cap1, cap2, cap3, cap4, cap5, cap6
 
 *
   box-sizing: border-box
@@ -17,6 +15,10 @@ body
 
   video
     width: 100%
+
+@for $i from 1 through 8
+  #principal>.seccion:nth-child(#{$i})
+    z-index: $i
 
 #logos
   position: absolute

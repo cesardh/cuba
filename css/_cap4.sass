@@ -1,1 +1,71 @@
+//Chinito
 #cap4
+  overflow: hidden !important
+  .intro
+    background: linear-gradient(left, rgba(255, 100, 100, 0.6) 0%, rgba(76, 120, 112, 0.61) 100%)
+    p
+      text-align: center
+#jardin
+  width: 100%
+  position: relative
+  top: 50%
+  left: 50%
+  transform: translateY(-50%) translateX(-50%)
+  img
+    filter: grayscale(1)
+    width: 100%
+    &.inicial
+      filter: brightness(0.05)
+  .fondo
+    -webkit-mask-image: url("../images/mask.png")
+    -webkit-mask-repeat: no-repeat
+    position: absolute
+    top: 0
+    &:nth-child(1)
+      -webkit-mask-position-x: 50%
+      -webkit-mask-position-y: 124%
+      -webkit-mask-size: 40%
+    &:nth-child(2)
+      -webkit-mask-position-x: -40%
+      -webkit-mask-position-y: 100%
+      -webkit-mask-size: 71%
+      opacity: 0
+      transition: opacity 2s ease
+    &:nth-child(3)
+      -webkit-mask-position-x: 120%
+      -webkit-mask-position-y: 120%
+      -webkit-mask-size: 50%
+      opacity: 0
+      transition: opacity 2s ease
+    &:nth-child(4)
+      -webkit-mask-position-x: 105%
+      -webkit-mask-position-y: 580%
+      -webkit-mask-size: 70%
+      opacity: 0
+      transition: opacity 2s ease
+
+  .punto
+    color: $tomate
+    position: absolute
+    width: 20px
+    height: 20px
+    transform: rotate(45deg) translateX(-50%) translateY(-50%)
+    background-color: currentColor
+    outline: 1px  currentColor solid
+    outline-offset: 5px
+    transition: all 500ms ease
+    box-sizing: content-box
+    &:hover
+      color: white
+      outline-offset: 20px
+      cursor: grabbing
+      padding: 5px
+    &:nth-child(1)
+      top: 50%
+      left: 20%
+    &:nth-child(2)
+      top: 24%
+      left: 66%
+    &:nth-child(3)
+      top: 68%
+      left: 85%
