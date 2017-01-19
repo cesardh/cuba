@@ -11,22 +11,22 @@
 
 function apagarAudio(audio){
   var reducir = setInterval(function(){
-    audio.volume -= 0.02;
-    if (audio.volume <= 0.05) {
+    audio.volume -= 0.03;
+    if (audio.volume <= 0.09) {
       audio.pause()
       clearInterval(reducir)
     }
-  }, 100)
+  }, 70)
 }
-function encenderAudio(audio){
+function encenderAudio(audio, maxVol = 1){
   audio.play();
   var aumentar = setInterval(function(){
-    audio.volume += 0.02;
-    if (audio.volume >= 0.95) {
+    audio.volume += 0.04;
+    if (audio.volume >= maxVol - 0.08) {
       clearInterval(aumentar)
-      audio.volume = 1;
+      audio.volume = maxVol;
     }
-  }, 100)
+  }, 70)
 }
 
 $(document).ready(function() {
@@ -43,11 +43,15 @@ $(document).ready(function() {
     });
   }
 
+
   var $capBtn = $('nav>ul>li');
   var $sec = $('#principal>.seccion');
   var enAnim = false;
   var videoPaisaje = $("#paisaje")[0];
   var videoViaje = $("#viajeVid")[0];
+  var audioCantar = $("#cantando")[0];
+  audioCantar.volume = 0
+  videoPaisaje.volume = 0
 
   $capBtn.click(function(e) {
     if(!enAnim && !$(this).hasClass('activo'))
@@ -69,7 +73,16 @@ $(document).ready(function() {
         encenderAudio($audioFondo)
       }
       if(index == 1){videoViaje.play()}else{videoViaje.pause()}
-      if(index == 3){videoPaisaje.play()}else{videoPaisaje.pause()}
+
+      if(index == 2){encenderAudio(audioCantar)}
+      else if (!audioCantar.paused){
+        apagarAudio(audioCantar)
+      }
+
+      if(index == 3){encenderAudio(videoPaisaje, 0.7)}
+      else if (!videoPaisaje.paused){
+        apagarAudio(videoPaisaje)
+      }
     }
   });
 
@@ -117,5 +130,17 @@ $(document).ready(function() {
     $(this).addClass('abrir');
     $($inv[index]).addClass('mostrar')
   })
+
+  var $dibujo = $(".elem", "#cap3")
+  var $resultado = $(".resultado", "#cap3")
+  $dibujo.click(function(event) {
+    var index = $dibujo.index(this);
+    $($resultado[index]).addClass('mostrar');
+    $capBtn.fadeOut('fast');
+  });
+  $resultado.click(function(event) {
+    $(this).removeClass('mostrar')
+    $capBtn.fadeIn('fast');
+  });
 
 });

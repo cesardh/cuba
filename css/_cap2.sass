@@ -65,6 +65,8 @@
     .locacion
       width: 20px
       height: 20px
+      min-width: 0px
+      min-height: 0px
       background: white
       transform: translateX(-50%) translateY(-50%) rotate(-135deg)
       position: absolute
@@ -83,12 +85,13 @@
         left: 83.1%
 
       &.abrir
-        width: 1200px
-        height: 1200px
+        width: 100vw
+        height: 100vw
+        min-width: 1200px
+        min-height: 1200px
         transform: translateX(-50%) translateY(-50%) rotate(45deg) !important
         left: 25% !important
         top: 50% !important
-        //background: linear-gradient(left, rgba(29, 76, 51, 0.91) 0%,rgba(0, 78, 87, 0.81) 100%)
         background: rgba($tomate, 0.9)
         outline-offset: 10px
         pointer-events: none
