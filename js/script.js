@@ -1,13 +1,12 @@
-// function launchFullScreen(element) {
-//   if(element.requestFullScreen) {
-//     element.requestFullScreen();
-//   } else if(element.mozRequestFullScreen) {
-//     element.mozRequestFullScreen();
-//   } else if(element.webkitRequestFullScreen) {
-//     element.webkitRequestFullScreen();
-//   }
-// }
-// launchFullScreen(document.documentElement);
+function launchFullScreen(element) {
+  if(element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
 
 function apagarAudio(audio){
   var reducir = setInterval(function(){
