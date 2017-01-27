@@ -36,10 +36,10 @@ $(document).ready(function() {
     $("#principal").css('opacity', 1);
   });
   animaciones()
-  var arrSeccion = [$("#cap1")];
+  var arrSeccion = [$("#cap1"), $("#d1"), $("#d2")];
   for (var i = 0; i < arrSeccion.length; i++) {
     arrSeccion[i].niceScroll({
-      scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false
+      scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false, zindex: -1
     });
   }
 
@@ -186,6 +186,19 @@ $(document).ready(function() {
   }
 
   //DEBATE
+  var $debateBtn = $(".titulo", "#cap5")
+  var debateSlide = $(".contenedor", "#cap5")
+  $debateBtn.click(function(event) {
+    var index = $debateBtn.index(this)
+    switch (index) {
+      case 0:
+        debateSlide.toggleClass('izquierda');;
+        break;
+      case 1:
+        debateSlide.toggleClass('derecha');
+        break;
 
+    }
+  });
 
 });
