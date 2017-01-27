@@ -33,6 +33,7 @@ $(document).ready(function() {
   $(window).load(function(){
     $("#load").delay(1000).fadeOut(1000);
     $audioFondo.play();
+    $("#principal").css('opacity', 1);
   });
   animaciones()
   var arrSeccion = [$("#cap1")];
@@ -42,13 +43,12 @@ $(document).ready(function() {
     });
   }
 
-
-  var $capBtn = $('nav>ul>li');
-  var $sec = $('#principal>.seccion');
-  var enAnim = false;
-  var videoPaisaje = $("#paisaje")[0];
-  var videoViaje = $("#viajeVid")[0];
-  var audioCantar = $("#cantando")[0];
+  var $capBtn = $('nav>ul>li'),
+      $sec = $('#principal>.seccion'),
+      enAnim = false,
+      videoPaisaje = $("#paisaje")[0],
+      videoViaje = $("#viajeVid")[0],
+      audioCantar = $("#cantando")[0]
   audioCantar.volume = 0
   videoPaisaje.volume = 0
 
@@ -130,6 +130,7 @@ $(document).ready(function() {
     $($inv[index]).addClass('mostrar')
   })
 
+
   var $dibujo = $(".elem", "#cap3")
   var $resultado = $(".resultado", "#cap3")
   $dibujo.click(function(event) {
@@ -141,5 +142,50 @@ $(document).ready(function() {
     $(this).removeClass('mostrar')
     $capBtn.fadeIn('fast');
   });
+
+  //CHINITO
+  var $punto = $(".punto"),
+      $mask = $(".fondo"),
+      revelable = [true, true, true],
+      countOpacity = [0,0,0]
+
+  $punto.mouseenter(function(event) {
+    var estePunto = $(this),
+        index = $punto.index(this),
+        target = $mask[index+1]
+
+    if( revelable[index] === true) {
+      $(this).mousemove(function(event) {
+        console.log("me muevo");
+        countOpacity[index] += 0.002
+        $(target).css('opacity', countOpacity[index])
+        var llenar = $(target).css('opacity')
+        if (llenar >= 1) {
+          $(target).css('filter', 'grayscale(0)');
+          $(target).css('-webkit-filter', 'grayscale(0)');
+          estePunto.css({
+            pointerEvents: 'none',
+            opacity: 0
+          });
+          revelable[index] = false
+        }
+      });
+    }
+  })
+  $punto.mouseleave(function(event) {
+    if (!revelable[0] && !revelable[1] && !revelable[2]) {
+      mostrarHistoria()
+    }
+  });
+  function mostrarHistoria(){
+    $($mask[0]).css('-webkit-filter', 'grayscale(0)');
+    $($mask[0]).css('filter', 'grayscale(0)');
+    $(".inicial").css('-webkit-filter', 'brightness(0.5)');
+    $(".inicial").css('-webkit-filter', 'brightness(0.5)');
+    $(".historia", "#cap4").delay(2000).fadeIn(3000)
+  }
+
+  //DEBATE
+
 
 });

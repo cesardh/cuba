@@ -9,9 +9,9 @@
   <body>
     <div id="load"><div>
       <h1>Loading</h1>
-      <img class="tuer" src="../images/mtd2.png" alt="">
-      <img class="tuer" src="../images/mtd2.png" alt="">
-      <img class="tuer" src="../images/mtd2.png" alt="">
+      <img class="tuer" src="images/mtd2.png" alt="">
+      <img class="tuer" src="images/mtd2.png" alt="">
+      <img class="tuer" src="images/mtd2.png" alt="">
     </div></div>
 
     <audio src="video/audio-fondo.mp3" loop></audio>
@@ -67,17 +67,24 @@
 
       <div id="cap0" class="seccion activo">
         <div id="logos">
-          <img src="images/logo-recrear.png" alt="">
-          <img src="images/logo-cyen.png" alt="">
-          <img src="images/logo-unhabitat.png" alt="">
+          <a href="http://recrearinternational.org/" target="_blank">
+            <img src="images/logo-recrear.png" alt="">
+          </a>
+          <a href="http://www.cyen.org/" target="_blank">
+            <img src="images/logo-cyen.png" alt="">
+          </a>
+          <a href="http://unhabitat.org/" target="_blank">
+            <img src="images/logo-unhabitat.png" alt="">
+          </a>
         </div>
+
         <div class="contenedor">
           <h1 class="titulo">CHANGING THE CLIMATE ON CUBA</h1>
           <br><br><br>
           <p>
             We are a group of passionate, action-oriented young people from all over the world. We design fun, practical research projects to learn about the experience of other young people. Our aim is to connect with ourselves, each other, and the world around us.
           <br><br>
-            Cuba intrigued us because we sensed that young Cubans were… a lot of things. So we created a little word game about it. It all started with a lot of serendipity.
+            Cuba intrigued us because we sensed that young Cubans were… a lot of things. So we created a little <a class="link" href="http://philome.la/randomgutfeelin/cuban-youth/play" target="_blank">word game</a> about it. It all started with a lot of serendipity.
           </p>
           <br><br><br><br>
           <p class="mns-auxiliar">Select a leaf to navigate between the chapters</p>
@@ -368,6 +375,11 @@
             <div class="punto"></div>
           </div>
         </div>
+        <div class="historia">
+          <p>“(…)The ‘chinito’ (little chinese), as he was warmly nicknamed, showed me that subconsciously nature helps us, is our friend, yet we barely give it our time. I reflected about it and I started spending a bit more time in the little garden so important to Chinito, who could have easily been my grandfather. Suddenly, everything around me completely changed.” <br>–Laritza-</p>
+          <a href="https://recrearmagnify.org/2014/07/16/chinito-and-the-garden/" target="_blanck"><p class="link">Read full history</p></a>
+          <p class="link">Listen to audio</p>
+        </div>
 
         <div class="intro">
           <h1 class="capitulo">Chapter 4: "Chinito"</h1>
@@ -380,16 +392,14 @@
         <div class="contenedor">
           <div class="debate">
             <div id="d1"></div>
-            <div>
-              <h2>Everything in nature has a role, even when it seems ‘bad’</h2>
-              <p>A Conversation Between Liliet and a Permaculturalist (Havana, Cuba).</p>
+            <div class="titulo">
+              <h1>Everything in nature has a role, even when it seems ‘bad’</h2>
             </div>
           </div>
 
           <div class="debate">
-            <div>
-              <h2>Is more economic growth in Cuba going to be good for the environment?</h2>
-              <p>In Havana, we facilitated a debate with a group of 25 young people. We divided them in three groups. One group was asking questions, one group was answering, and a few people were observing. Participants were asked to put themselves in the shoes of a different character: a journalist from Granma, an environmentalist, a taxi driver, a housewife, a young musician. The idea was to reflect over how different people relate to the problem of climate change in Cuba.</p>
+            <div class="titulo">
+              <h1>Is more economic growth in Cuba going to be good for the environment?</h2>
             </div>
             <div id="d2"></div>
           </div>
@@ -442,6 +452,7 @@
     <script src="js\libs\jquery.nicescroll.min.js"></script>
     <script src="js\libs\TweenMax.min.js"></script>
     <script src="js\libs\velocity.min.js"></script>
+    <script src="js\libs\p5.min.js"></script>
 
     <script src="js/scrollmagic/ScrollMagic.min.js"></script>
     <script src="js\scrollmagic\plugins\debug.addIndicators.min.js"></script>
