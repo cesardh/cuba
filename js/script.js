@@ -200,4 +200,11 @@ $(document).ready(function() {
     }
   });
 
+  //Tesoro
+    var tCerrar = $(".cerrar", "#cap6")
+    tCerrar.click(function(event) {
+      $(".envoltura").hide()
+      $(this).hide()
+    });
+
 });
