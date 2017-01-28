@@ -78,8 +78,8 @@ $(document).ready(function() {
         apagarAudio(audioCantar)
       }
 
-      if(index == 3){encenderAudio(videoPaisaje, 0.7)}
-      else if (!videoPaisaje.paused){
+      if((index == 3 || index == 4 )&& videoPaisaje.paused){encenderAudio(videoPaisaje, 1)}
+      else if ((index < 3 || index > 4) && !videoPaisaje.paused){
         apagarAudio(videoPaisaje)
       }
     }
@@ -156,7 +156,6 @@ $(document).ready(function() {
 
     if( revelable[index] === true) {
       $(this).mousemove(function(event) {
-        console.log("me muevo");
         countOpacity[index] += 0.002
         $(target).css('opacity', countOpacity[index])
         var llenar = $(target).css('opacity')

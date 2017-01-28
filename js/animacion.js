@@ -48,4 +48,22 @@ function animaciones(){
 		.setClassToggle("#cap1-p3 .targ" + (i+1), "mostrar")
 		.addTo(control);
 	}
+
+	var chats = [$(".chat", "#d1"), $(".chat", "#d2")]
+			controlChat = []
+			controlChat[0] = new ScrollMagic.Controller({container: "#d1"})
+			controlChat[1] = new ScrollMagic.Controller({container: "#d2"})
+
+	for (var i = 0; i < 2; i++) {
+
+		for (var j = 0; j < chats[i].length; j++) {
+			new ScrollMagic.Scene({
+				triggerElement: chats[i][j],
+				triggerHook: 0.6,
+				duration: 0
+			})
+			.setClassToggle(chats[i][j], "mostrar")
+			.addTo(controlChat[i])
+		}
+	}
 }
