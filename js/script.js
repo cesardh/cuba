@@ -200,11 +200,59 @@ $(document).ready(function() {
     }
   });
 
-  //Tesoro
-    var tCerrar = $(".cerrar", "#cap6")
-    tCerrar.click(function(event) {
-      $(".envoltura").hide()
-      $(this).hide()
+//TESORO
+  var tCerrar = $(".cerrar", "#cap6")
+      $base = $(".indicador", "#cap6")
+      $secTesoro = $(".envoltura", "#cap6")
+      $inputFeliz = $("input[name=feliz]", "#cap6")
+      $listaFeliz = $("ul", "#feliz")
+      $agregarFeliz = $(".agregar", "#cap6")
+  var $fCerrar = $("nada");
+      indexActual = 0
+
+
+  tCerrar.hide()
+  $secTesoro.hide()
+  tCerrar.click(function(event) {
+    $($secTesoro, ".indicador .abrir").hide()
+    $base.removeClass('abrir')
+    $(this).hide()
+    $secTesoro.hide()
+    $capBtn.fadeIn("fast")
+  });
+  $base.on("click", function(event) {
+    var index = $base.index(this)
+    indexActual = index
+    tCerrar.delay(500).fadeIn(500)
+    $(this).addClass('abrir')
+    $($secTesoro[index]).fadeIn(500).css('display', 'flex');
+    $capBtn.fadeOut("fast")
+  });
+
+  $agregarFeliz.click(function(event) {
+    var val = $($inputFeliz[0]).val()
+    var $li = $("li", "#feliz")
+    var items = $li.length
+
+    if (items < 10 && val != "") {
+      $listaFeliz.append('<li>' + val + '<span>X</span></li>')
+      $($inputFeliz[0]).val("").focus()
+    }
+    $fCerrar = $("li span", "#feliz")
+    $fCerrar.on("click", function(event) {
+      $(this).parent().remove()
     });
+  });
+
+  var $ok = $(".ok", "#cap6")
+      $apren = $(".aprendizaje", "#cap6")
+  $ok.click(function(event) {
+    $($apren[indexActual]).css('opacity', '1');
+    $(this).addClass('listo')
+    $agregarFeliz.fadeOut(500)
+    $($listaFeliz).css('pointerEvents', 'none');
+  });
+
+
 
 });
