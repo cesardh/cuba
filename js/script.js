@@ -228,11 +228,12 @@ $(document).ready(function() {
     $($secTesoro[index]).fadeIn(500).css('display', 'flex');
     $capBtn.fadeOut("fast")
   });
-
+  var $li
   $agregarFeliz.click(function(event) {
     var val = $($inputFeliz[0]).val()
-    var $li = $("li", "#feliz")
+    $li = $("li", "#feliz")
     var items = $li.length
+    console.log(items);
 
     if (items < 10 && val != "") {
       $listaFeliz.append('<li>' + val + '<span>X</span></li>')
@@ -241,16 +242,44 @@ $(document).ready(function() {
     $fCerrar = $("li span", "#feliz")
     $fCerrar.on("click", function(event) {
       $(this).parent().remove()
+      if (!$($ok[0]).hasClass('bloq')) {
+        $($ok[0]).addClass('bloq')
+      }
     });
+    if (items == 9) {
+      $($ok[0]).removeClass('bloq')
+    }
+  });
+
+  $($(".actividad", "#cap6")[1]).click(function(event) {
+    if (okActivo1 && $($ok[1]).hasClass('bloq')) {
+      $($ok[1]).removeClass('bloq')
+    }
   });
 
   var $ok = $(".ok", "#cap6")
       $apren = $(".aprendizaje", "#cap6")
+      cosasFeliz = []
   $ok.click(function(event) {
     $($apren[indexActual]).css('opacity', '1');
     $(this).addClass('listo')
-    $agregarFeliz.fadeOut(500)
-    $($listaFeliz).css('pointerEvents', 'none');
+
+    switch (indexActual) {
+      case 0:
+        $agregarFeliz.fadeOut(500)
+        $($listaFeliz).css('pointerEvents', 'none');
+        $li = $("li", "#feliz")
+        for (var i = 0; i < $li.length; i++)
+        {
+          var sCosa = $($li[i]).text().toString()
+          cosasFeliz.push(sCosa.substr(0, sCosa.length - 1))
+        }
+        break;
+      case 1:
+
+      default:
+    }
+
   });
 
 
