@@ -1,26 +1,23 @@
 var mcsWidth = $("#mapaComunidad").width()
-var mcsHeight = $("#mapaComunidad").height()
-var okActivo1 = false
-
+    mcsHeight = $("#mapaComunidad").height()
+    dibujoContar = 0
+    okActivo = [false,false,false,false,false,false]
 
 var s1 = function(p){
-  var count = 0
 
   p.setup = function(){
-    p.createCanvas(mcsWidth,mcsHeight)
+    var cnv = p.createCanvas(mcsWidth,mcsHeight)
     p.background(255)
-  }
-
-  p.draw = function(){
   }
 
   p.mouseDragged = function(){
     lapiz(p.color(10,50,100))
-    if(!okActivo1){
-      count += 0.1
+    if(!okActivo[1]){
+      dibujoContar += 0.18
     }
-    if (count>100) {
-      okActivo1 = true
+    if (dibujoContar>100) {
+      okActivo[1] = true
+      okActivo[3] = true
     }
   }
 
@@ -36,4 +33,6 @@ var s1 = function(p){
   }
 }
 
-var sketch1 = new p5(s1, "mapaComunidad")
+
+var sketch1 = new p5(s1, "mapaComunidad");
+var sketch2 = new p5(s1, "mapaMundo");

@@ -59,7 +59,7 @@ function animaciones(){
 		for (var j = 0; j < chats[i].length; j++) {
 			new ScrollMagic.Scene({
 				triggerElement: chats[i][j],
-				triggerHook: 0.6,
+				triggerHook: 0.5,
 				duration: 0
 			})
 			.setClassToggle(chats[i][j], "mostrar")

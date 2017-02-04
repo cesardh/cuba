@@ -93,8 +93,8 @@
       </div>
 
       <div id="cap1" class="seccion">
-        <h1 class="capitulo">Chapter 1: The reasearch</h1>
-        <img src="images/scroll.png" class="scroll">
+        <h1 class="capitulo">Chapter 1: The research</h1>
+        <div class="scroll"><img src="images/scroll.png"></div>
         <div class="envoltura">
           <div class="efecto"></div>
           <div class="parte" id="cap1-p1">
@@ -407,7 +407,7 @@
         <div class="contenedor">
           <div class="debate">
             <div id="d1" class="conversacion">
-              <img src="images/scroll.png" class="scroll">
+              <div class="scroll"><img src="images/scroll.png"></div>
               <div class="chat">
                 <div class="foto"></div>
                 <div class="textos">
@@ -497,7 +497,7 @@
               <h1>Is more economic growth in Cuba going to be good for the environment?</h2>
             </div>
             <div id="d2" class="conversacion">
-              <img src="images/scroll.png" class="scroll">
+              <div class="scroll"><img src="images/scroll.png"></div>
               <div class="chat">
                 <div class="foto"></div>
                 <div class="textos">
@@ -554,7 +554,7 @@
 
         <div class="contenedor">
           <img src="images/mapa.png" alt="">
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base"></div>
             <div class="envoltura">
               <div class="descripcion">
@@ -577,11 +577,11 @@
                   <ul>
                   </ul>
                 </div>
-                <div class="ok bloq"><h1>OK</h1></div>
+                <div class="ok bloq"><h1><span>0</span> / 10</h1></div>
               </div>
             </div>
           </div>
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base"></div>
             <div class="envoltura">
               <div class="descripcion">
@@ -596,11 +596,11 @@
                 <div id="mapaComunidad"></div>
                 <div></div>
                 <div></div>
-                <div class="ok bloq"><h1>OK</h1></div>
+                <div class="ok bloq"><h1>Draw something</h1></div>
               </div>
             </div>
           </div>
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base"></div>
             <div class="envoltura">
               <div class="descripcion">
@@ -613,11 +613,11 @@
               <div class="actividad">
                 <div></div>
                 <div></div>
-                <div class="ok bloq"><h1>OK</h1></div>
+                <div class="ok bloq"><h1>Click to finish</h1></div>
               </div>
             </div>
           </div>
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base"></div>
             <div class="envoltura">
               <div class="descripcion">
@@ -628,13 +628,14 @@
                 </span></p>
               </div>
               <div class="actividad">
+                <div id="mapaMundo"></div>
                 <div></div>
                 <div></div>
-                <div class="ok bloq"><h1>OK</h1></div>
+                <div class="ok bloq"><h1>Draw something</h1></div>
               </div>
             </div>
           </div>
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base"></div>
             <div class="envoltura">
               <div class="descripcion">
@@ -647,11 +648,11 @@
               <div class="actividad">
                 <div></div>
                 <div></div>
-                <div class="ok bloq"><h1>OK</h1></div>
+                <div class="ok bloq"><h1>Write a letter</h1></div>
               </div>
             </div>
           </div>
-          <div class="indicador">
+          <div class="indicador girar">
             <div class="base tesoro"></div>
           </div>
           <div class="cerrar">X</div>
@@ -681,6 +682,7 @@
     <script src="js\libs\TweenMax.min.js"></script>
     <script src="js\libs\velocity.min.js"></script>
     <script src="js\libs\p5.min.js"></script>
+    <script src="js\libs\p5.dom.js"></script>
 
     <script src="js/scrollmagic/ScrollMagic.min.js"></script>
     <script src="js\scrollmagic\plugins\debug.addIndicators.min.js"></script>

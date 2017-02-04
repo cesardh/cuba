@@ -209,8 +209,9 @@ $(document).ready(function() {
       $agregarFeliz = $(".agregar", "#cap6")
   var $fCerrar = $("nada");
       indexActual = 0
+      items = 0
 
-
+  $($base[5]).hide()
   tCerrar.hide()
   $secTesoro.hide()
   tCerrar.click(function(event) {
@@ -229,44 +230,72 @@ $(document).ready(function() {
     $capBtn.fadeOut("fast")
   });
   var $li
+  $inputFeliz.keypress(function(event) {
+    if (event.key == "Enter") {
+      $agregarFeliz.click();
+    }
+  }).focus()
+
   $agregarFeliz.click(function(event) {
     var val = $($inputFeliz[0]).val()
-    $li = $("li", "#feliz")
-    var items = $li.length
-    console.log(items);
 
     if (items < 10 && val != "") {
       $listaFeliz.append('<li>' + val + '<span>X</span></li>')
       $($inputFeliz[0]).val("").focus()
+      $li = $("li", "#feliz")
+      items = $li.length
     }
+
     $fCerrar = $("li span", "#feliz")
-    $fCerrar.on("click", function(event) {
+    $($ok[0]).find('span').html(items)
+
+    $fCerrar.one("click", function(event) {
       $(this).parent().remove()
+      items = $("li", "#feliz").length
+      console.log(items);
+      $($ok[0]).find('span').html(items)
       if (!$($ok[0]).hasClass('bloq')) {
         $($ok[0]).addClass('bloq')
+        $inputFeliz.attr('disabled', false);
       }
     });
-    if (items == 9) {
+
+    if (items > 9) {
       $($ok[0]).removeClass('bloq')
+      $inputFeliz.attr('disabled', true);
     }
   });
 
-  $($(".actividad", "#cap6")[1]).click(function(event) {
-    if (okActivo1 && $($ok[1]).hasClass('bloq')) {
-      $($ok[1]).removeClass('bloq')
-    }
-  });
+  var $actividad = $(".actividad", "#cap6")
+  // $actividad.click(function(event) {
+  //   if (okActivo[indexActual] && $($ok[indexActual]).hasClass('bloq')) {
+  //     $($ok[indexActual]).removeClass('bloq')
+  //     .find('h1').html("Click to finish")
+  //   }
+  // });
 
   var $ok = $(".ok", "#cap6")
       $apren = $(".aprendizaje", "#cap6")
+      terminados = 0
       cosasFeliz = []
+      dibujoComunidad = ""
+      dibujoMundo = ""
   $ok.click(function(event) {
     $($apren[indexActual]).css('opacity', '1');
     $(this).addClass('listo')
+    $(this).find('h1').html("Saved")
+    $($base[indexActual]).addClass('terminado')
+    $($base[indexActual]).removeClass('girar')
+    terminados ++
+
+    if (terminados == 5) {
+      $($(base)[5]).show()
+    }
 
     switch (indexActual) {
       case 0:
         $agregarFeliz.fadeOut(500)
+        $inputFeliz.animate({opacity: 0}, 500)
         $($listaFeliz).css('pointerEvents', 'none');
         $li = $("li", "#feliz")
         for (var i = 0; i < $li.length; i++)
@@ -275,8 +304,40 @@ $(document).ready(function() {
           cosasFeliz.push(sCosa.substr(0, sCosa.length - 1))
         }
         break;
-      case 1:
 
+      case 1:
+        dibujoComunidad = $("#defaultCanvas0")[0]
+                            .getContext('2d')
+                            .canvas
+                            .toDataURL()
+        $("#mapaComunidad").html(
+          "<img src='"+ dibujoComunidad + "'>"
+        )
+        $($actividad[indexActual])
+        .find('#mapaComunidad')
+        .css('cursor', 'default');
+        okActivo[1] = false
+        okActivo[3] = false
+        dibujoContar = 0
+        break
+
+      case 2:
+        break
+      case 3:
+        dibujoMundo = $("#defaultCanvas1")[0]
+                            .getContext('2d')
+                            .canvas
+                            .toDataURL()
+        $("#mapaMundo").html(
+          "<img src='"+ dibujoMundo + "'>"
+        )
+        console.log(dibujoMundo);
+        $($actividad[indexActual])
+        .find('#mapaMundo')
+        .css('cursor', 'default');
+        okActivo[1] = false
+        dibujoContar = 0
+        break
       default:
     }
 
