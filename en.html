@@ -570,7 +570,7 @@
                 </p>
               </div>
               <div class="actividad">
-                <input type="text" name="feliz" autofocus placeholder="What makes you happy?">
+                <input type="text" name="feliz" maxlength="30" autofocus placeholder="What makes you happy?">
                 <div class="agregar">+</div>
 
                 <div id="feliz">
@@ -610,9 +610,10 @@
                   We did this exercise using freeze frames to bring some of their interpretations to life. What we found is that Cuba's past generation had a stronger relationship to nature even though they were not versed in today's generation of climate talk.
                 </span></p>
               </div>
-              <div class="actividad">
-                <div></div>
-                <div></div>
+              <div class="actividad" id="ppf">
+                <input autofocus maxlength="15" type="text" name="Past" value="" placeholder="A word for the past generation">
+                <input maxlength="15" type="text" name="Future" value="" placeholder="A word for the your own generation">
+                <input maxlength="15" type="text" name="Future" value="" placeholder="A word fo ther future generation">
                 <div class="ok bloq"><h1>Click to finish</h1></div>
               </div>
             </div>
@@ -645,15 +646,15 @@
                   <span>Learning in Cuba:</span><br><span>Turns out Cubans are very capable of articulating themselves when it comes to what needs to get done. They used this space to point out the areas of neglect and suggest initiatives to remedy this.
                   </span></p>
               </div>
-              <div class="actividad">
-                <div></div>
-                <div></div>
+              <div class="actividad" id="carta">
+                <textarea rows="10" cols="20" maxlength="850"></textarea>
                 <div class="ok bloq"><h1>Write a letter</h1></div>
               </div>
             </div>
           </div>
           <div class="indicador girar">
             <div class="base tesoro"></div>
+            <div class="envoltura tesoroRes"><img src="images/tesororesultado.jpg" alt=""></div>
           </div>
           <div class="cerrar">X</div>
 

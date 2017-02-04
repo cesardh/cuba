@@ -1,7 +1,7 @@
 var mcsWidth = $("#mapaComunidad").width()
     mcsHeight = $("#mapaComunidad").height()
     dibujoContar = 0
-    okActivo = [false,false,false,false,false,false]
+    okActivo = false
 
 var s1 = function(p){
 
@@ -16,8 +16,7 @@ var s1 = function(p){
       dibujoContar += 0.18
     }
     if (dibujoContar>100) {
-      okActivo[1] = true
-      okActivo[3] = true
+      okActivo = true
     }
   }
 

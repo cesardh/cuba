@@ -262,17 +262,43 @@ $(document).ready(function() {
 
     if (items > 9) {
       $($ok[0]).removeClass('bloq')
-      $inputFeliz.attr('disabled', true);
+      $inputFeliz.attr('disabled', true).click();
+    }
+  });
+
+  var $ppf = $("input", "#ppf")
+      ppfLleno = []
+  $ppf.keyup(function(event) {
+    for (var i = 0; i < $ppf.length; i++) {
+      ppfLleno[i] = $($ppf[i]).val()
+    }
+    if (ppfLleno[0] != "" && ppfLleno[1] != "" && ppfLleno[2] != "") {
+      $($ok[indexActual]).removeClass('bloq')
+    }
+  });
+  var $carta = $("textarea", "#carta")
+      cartaEsctita = false
+  $carta.keyup(function(event) {
+    var letras = $(this).val().length
+    console.log(letras);
+    if (letras > 100) {
+      $($ok[indexActual]).removeClass('bloq')
     }
   });
 
   var $actividad = $(".actividad", "#cap6")
-  // $actividad.click(function(event) {
-  //   if (okActivo[indexActual] && $($ok[indexActual]).hasClass('bloq')) {
-  //     $($ok[indexActual]).removeClass('bloq')
-  //     .find('h1').html("Click to finish")
-  //   }
-  // });
+  $actividad.click(function(event) {
+    var i = indexActual
+    if ((i == 1 || i == 3) && okActivo) {
+      $($ok[indexActual]).removeClass('bloq')
+    }
+    if(
+      !$($ok[indexActual]).hasClass('bloq') &&
+      !$($ok[indexActual]).hasClass('listo')
+    ){
+      $($ok[indexActual]).find('h1').html("Click to finish")
+    }
+  });
 
   var $ok = $(".ok", "#cap6")
       $apren = $(".aprendizaje", "#cap6")
@@ -280,6 +306,8 @@ $(document).ready(function() {
       cosasFeliz = []
       dibujoComunidad = ""
       dibujoMundo = ""
+      cartaTexto = ""
+      palabrasTiempos = ["","",""]
   $ok.click(function(event) {
     $($apren[indexActual]).css('opacity', '1');
     $(this).addClass('listo')
@@ -289,7 +317,7 @@ $(document).ready(function() {
     terminados ++
 
     if (terminados == 5) {
-      $($(base)[5]).show()
+      $($base[5]).show()
     }
 
     switch (indexActual) {
@@ -322,6 +350,8 @@ $(document).ready(function() {
         break
 
       case 2:
+        palabrasTiempos = ppfLleno
+        $ppf.css('pointerEvents', 'none');
         break
       case 3:
         dibujoMundo = $("#defaultCanvas1")[0]
@@ -338,6 +368,10 @@ $(document).ready(function() {
         okActivo[1] = false
         dibujoContar = 0
         break
+      case 4:
+        cartaTexto = $carta.val()
+        $carta.css('pointerEvents', 'none');
+        break;
       default:
     }
 
