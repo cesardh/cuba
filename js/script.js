@@ -1,11 +1,32 @@
-function launchFullScreen(element) {
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
+function toggleFullScreen() {
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {
+      document.documentElement.requestFullScreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullScreen) {
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
   }
+}
+var muted = false
+var $aMuted = $("#muted")
+function toggleMuted(){
+  muted = !muted
+  var audios = $("audio, video")
+  for (var i = 0; i < audios.length; i++) {
+    $(audios[i])[0].muted = muted
+  }
+  $aMuted.toggleClass('mute');
 }
 
 function apagarAudio(audio){
@@ -36,7 +57,7 @@ $(document).ready(function() {
     $("#principal").css('opacity', 1);
   });
   animaciones()
-  var arrSeccion = [$("#cap1"), $("#d1"), $("#d2")];
+  var arrSeccion = [$("#cap1"), $("#d1"), $("#d2"), $("#learning")];
   for (var i = 0; i < arrSeccion.length; i++) {
     arrSeccion[i].niceScroll({
       scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false, zindex: -1
@@ -49,6 +70,7 @@ $(document).ready(function() {
       videoPaisaje = $("#paisaje")[0],
       videoViaje = $("#viajeVid")[0],
       audioCantar = $("#cantando")[0]
+      videoTimelapse = $("#timelapse")[0]
   audioCantar.volume = 0
   videoPaisaje.volume = 0
 
@@ -77,10 +99,29 @@ $(document).ready(function() {
       else if (!audioCantar.paused){
         apagarAudio(audioCantar)
       }
-
       if((index == 3 || index == 4 )&& videoPaisaje.paused){encenderAudio(videoPaisaje, 1)}
       else if ((index < 3 || index > 4) && !videoPaisaje.paused){
         apagarAudio(videoPaisaje)
+      }
+      if (index == 7) {
+        $(".pantalla", "#cap7").delay(2000).animate({opacity: 0}, {
+          duration: 2000,
+          start: function(){
+            videoTimelapse.currentTime = 0
+            videoTimelapse.play()
+          },
+          complete: function(){
+            $(this).css('background', 'white');
+            $(".efecto", "#cap7").delay(2000).animate({opacity: 0.5}, {
+              duration: 2000,
+              complete: function(){
+                $(".foto", "#cap7").delay(500).fadeIn(1500);
+                $("#learning").delay(700).fadeIn(1500)
+              }
+            })
+            $(this).delay(2000).animate({opacity: 1}, 2500)
+          }
+        })
       }
     }
   });
@@ -156,7 +197,7 @@ $(document).ready(function() {
 
     if( revelable[index] === true) {
       $(this).mousemove(function(event) {
-        countOpacity[index] += 0.002
+        countOpacity[index] += 0.008
         $(target).css('opacity', countOpacity[index])
         var llenar = $(target).css('opacity')
         if (llenar >= 1) {
@@ -227,6 +268,9 @@ $(document).ready(function() {
     tCerrar.delay(500).fadeIn(500)
     $(this).addClass('abrir')
     $($secTesoro[index]).fadeIn(500).css('display', 'flex');
+    if (index == 5) {
+      $($secTesoro[5]).fadeIn(500).css('display', 'block');
+    }
     $capBtn.fadeOut("fast")
   });
   var $li
@@ -252,7 +296,6 @@ $(document).ready(function() {
     $fCerrar.one("click", function(event) {
       $(this).parent().remove()
       items = $("li", "#feliz").length
-      console.log(items);
       $($ok[0]).find('span').html(items)
       if (!$($ok[0]).hasClass('bloq')) {
         $($ok[0]).addClass('bloq')
@@ -280,7 +323,6 @@ $(document).ready(function() {
       cartaEsctita = false
   $carta.keyup(function(event) {
     var letras = $(this).val().length
-    console.log(letras);
     if (letras > 100) {
       $($ok[indexActual]).removeClass('bloq')
     }
@@ -318,6 +360,7 @@ $(document).ready(function() {
 
     if (terminados == 5) {
       $($base[5]).show()
+      canvasTesoro = true
     }
 
     switch (indexActual) {
@@ -361,7 +404,6 @@ $(document).ready(function() {
         $("#mapaMundo").html(
           "<img src='"+ dibujoMundo + "'>"
         )
-        console.log(dibujoMundo);
         $($actividad[indexActual])
         .find('#mapaMundo')
         .css('cursor', 'default');
@@ -374,9 +416,9 @@ $(document).ready(function() {
         break;
       default:
     }
-
   });
-
-
+  $("#descargar").click(function(event) {
+    descargarCanvas = true
+  });
 
 });

@@ -66,4 +66,18 @@ function animaciones(){
 			.addTo(controlChat[i])
 		}
 	}
+
+	var pElem = $("p", "#learning"),
+			pTrg = $(".trgP", "#learning")
+			controlFinal = new ScrollMagic.Controller({container: "#learning"})
+
+		for (var i = 0; i < pElem.length; i++) {
+			new ScrollMagic.Scene({
+				triggerElement: pTrg[i],
+				triggerHook: 1,
+				duration: 300
+			})
+			.setTween(pElem[i], {transform: "scale(1)", opacity: 1})
+			.addTo(controlFinal)
+		}
 }
