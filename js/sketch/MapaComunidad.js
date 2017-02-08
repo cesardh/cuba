@@ -42,8 +42,8 @@ var s2 = function(c){
   primeraVez = true
 
   c.preload = function(){
-    img = c.loadImage("../images/tesororesultado.png")
-    textura = c.loadImage("../images/tesororesultado-back.png")
+    img = c.loadImage("images/tesororesultado.png")
+    textura = c.loadImage("images/tesororesultado-back.png")
   }
 
   c.setup = function(){
