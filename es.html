@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="css\navegador.css">
   </head>
   <body>
-    <div id="load"><div></div></div>
-    <audio src="video/audio-fondo.mp3" loop muted></audio>
+    <div id="load"><div>
+      <h1>Cargando</h1>
+      <img class="tuer" src="images/mtd2.png" alt="">
+      <img class="tuer" src="images/mtd2.png" alt="">
+      <img class="tuer" src="images/mtd2.png" alt="">
+    </div></div>
+
+    <audio src="video/audio-fondo.mp3" loop></audio>
     <svg>
       <defs>
         <path id="leaf" d="M19.025 3.587c-4.356 2.556-4.044 7.806-7.096 10.175-2.297 1.783-5.538 0.88-7.412 0.113 0 0-1.27 1.603-2.181 3.74-0.305 0.717-1.644-0.073-1.409-0.68 2.978-7.685 13.11-11.519 13.11-11.519s-7.149-0.303-11.927 5.94c-0.128-1.426-0.34-5.284 3.36-7.65 5.016-3.211 14.572-0.715 13.555-0.119z"></path>
       </defs>
     </svg>
-
-    <div id="mensaje">
-      Este sitio aún está en construcción, podrás disfrutar de la experiencia completa el día 15 de enero de 2017. ¡Gracias por visitarnos! <br><br><br>
-
-      This site is still under construction, you can enjoy the complete experience on January 15, 2017. Thanks for visiting!
-    </div>
 
     <nav>
       <ul>
@@ -58,35 +58,79 @@
       </ul>
     </nav>
 
+    <div id="menu">
+      <a id="muted" href="#" onclick="toggleMuted()"><div>
+        <img src="images/volume.png" alt="">
+      </div></a>
+      <a id="in" href="#"><div>
+        <img src="images/info.png" alt="">
+      </div></a>
+      <a href="#" onclick="toggleFullScreen()"><div>
+        <img src="images/fullscreen.png" alt="">
+      </div></a>
+    </div>
+    <div id="info">
+      <div class="contenido">
+        <h1>Creditos</h1><br>
+        <h2>Sean Liliani</h2>
+        <p>video, audio y fotografía<br>
+        <span>seanliliani@gmail.com</span></p>
+        <br>
+        <h2>Irene Caselli</h2>
+        <p>Narración (Chinito y el jardín)</p>
+        <br>
+        <h2>César Duarte </h2>
+        <p>Diseño y desarrollo web<br>
+        <span>github.com/cesardh</span></p>
+        <br>
+        <h2>Carolina López</h2>
+        <p>Traducciones</p>
+      </div>
+    </div>
+
     <div id="principal">
 
       <div id="cap0" class="seccion activo">
         <div id="logos">
-          <img src="images/logo-recrear.png" alt="">
-          <img src="images/logo-cyen.png" alt="">
-          <img src="images/logo-unhabitat.png" alt="">
+          <a href="http://recrearinternational.org/" target="_blank">
+            <img src="images/logo-recrear.png" alt="">
+          </a>
+          <a href="http://www.cyen.org/" target="_blank">
+            <img src="images/logo-cyen.png" alt="">
+          </a>
+          <a href="http://unhabitat.org/" target="_blank">
+            <img src="images/logo-unhabitat.png" alt="">
+          </a>
         </div>
+
         <div class="contenedor">
-          <h1 class="titulo">CAMBIANDO EL CLIMA EN CUBA
-          </h1><br><br><br>
-          <p>somos un grupo of passionate, action-oriented young people from all over the world. We design fun, practical research projects to learn about the experience of other young people. Our aim is to connect with ourselves, each other, and the world around us.
-          <br><br>
-          Cuba intrigued us because we sensed that young Cubans were… a lot of things. So we created a little word game about it. It all started with a lot of serendipity.</p>
+
+          <h1 class="titulo">CAMBIANDO EL CLIMA EN CUBA</h1>
+          <br><br><br>
+          <p>
+            Somos un grupo de jóvenes apasionados y orientados a la acción de todo el mundo. Diseñamos proyectos de investigación divertidos y prácticos para conocer la experiencia de otros jóvenes. Nuestro objetivo es conectarnos con nosotros mismos, con nosotros y con el mundo que nos rodea.
+            <br><br>
+            Cuba nos intrigó porque sentíamos que los jóvenes cubanos eran ... un montón de cosas. Así que creamos un pequeño
+            <a class="link" href="http://philome.la/randomgutfeelin/cuban-youth/play" target="_blank"> juego de palabras</a>
+            sobre eso. Todo comenzó casi de casualidad ...
+          </p>
           <br><br><br><br>
-          <p class="mns-auxiliar">Select a leaf to navigate between the chapters</p>
+          <p class="mns-auxiliar">Seleccione una hoja para navegar entre los capítulos</p>
         </div>
 
       </div>
 
       <div id="cap1" class="seccion">
-        <h1 class="capitulo">Chapter 1: Trip</h1>
-        <img src="images/scroll.png" class="scroll">
+        <h1 class="capitulo">Capítulo 1: La investigación</h1>
+        <div class="scroll"><img src="images/scroll.png"></div>
         <div class="envoltura">
           <div class="efecto"></div>
           <div class="parte" id="cap1-p1">
             <img src="images/choza.JPG" alt="">
             <div class="contenedor">
-              <p class="marg2">Recrear went to Cuba to learn about young people's attitudes towards climate change and what they wanted to do about it.</p>
+              <p class="marg2">
+                Recrear fue a Cuba para conocer las actitudes de los jóvenes sobre el cambio climático y lo que querían hacer al respecto.
+              </p>
             </div>
           </div>
           <div class="separar"></div>
@@ -99,57 +143,69 @@
                 <img src="images/nube3.png" alt="">
                 <img src="images/avion.png" alt="" id="avion">
               </div>
-              <p class="t1">We went back to the drawing table and designed a participatory action research project to explore how youth engage with climate action in Cuba. So off Gioel, Kirsten and Desirae went.</p>
+              <p class="t1">Volvimos a la mesa de dibujo y diseñamos un proyecto de investigación participativa para explorar cómo los jóvenes se comprometen con la acción climática en Cuba. ¡Así que nos fuimos!.</p>
               <div id="retratos">
                 <div>
-                  <p>Gioel is the Director of Research at Recrear. The Cuba project was born in large part because of her friendship with a Cuban activist named Handy.</p></div>
-                <div>
-                  <p>Desirae is a youth specialist who interned with Recrear during the Cuba project; lending her awesome skills in research and writing.</p>
+                  <p>Gioel es la Directora de Investigación de Recrear. El proyecto cubano nació en gran parte por su amistad con Handy, un activista ambiental cubano.</p>
                 </div>
                 <div>
-                  <p>Kirsten is Recrear’s resident community caretaker. She has spent several years playing with experiential education and youth-friendly techniques.</p>
+                  <p>Desirae es una joven especialista que se internó con Recrear durante el proyecto cubano. Ella compartió sus impresionantes habilidades en investigación y escritura.</p>
+                </div>
+                <div>
+                  <p>Kirsten es la cuidadora comunitaria residente de Recrear. Ella ha pasado varios años jugando con la educación experiencial y las técnicas para jóvenes.</p>
                 </div>
               </div>
-              <p class="t2">In our first exploratory visit, we came face to face with incredible ‘youth leaders’ in Cuba’s environmental sector. The problem is they are scattered all over the country so working together is hard. It doesn’t help that communication and transportation kind of suck.</p>
+              <p class="t2">En nuestra primera visita exploratoria, nos encontramos cara a cara con increíbles líderes juveniles del sector ambiental cubano. El problema es que están dispersos por todo el país por lo que trabajar juntos es difícil. No ayuda que la comunicación y el transporte es pésimo.</p>
             </div>
           </div>
           <div class="separar sin-espacio"></div>
           <div class="parte" id="cap1-p3">
-            <video src="video\actividad_1.mp4" autoplay loop></video>
+            <video src="video\actividad_1.mp4" loop id="viajeVid"></video>
             <div class="contenedor al100 frontal">
-              <h1>Our Methodology</h1>
+              <h1>Nuestra Metodología</h1>
               <br><br>
               <br><br>
-              <img src="" alt="">
-              <p>Training: We selected a group of Cuban youth leaders from each region to train in action research.</p>
+              <div class="trig1"></div>
+              <img class="targ1" src="images/mtd1.png" alt="">
+              <p><span>Capacitación</span> <br>El grupo de dirigentes juveniles cubanos recibió capacitación sobre investigación-acción participativa.</p>
               <br><br>
-              <img src="" alt="">
-              <p>12 workshops: We ran a series of participatory action research workshops with about 75 young people, aged 18-35 in the cities of Havana, Santa Clara and Santiago de Cuba.</p>
+              <div class="trig2"></div>
+              <div class="tuercas targ2">
+                <img src="images/mtd2.png" alt="">
+                <img src="images/mtd2.png" alt="">
+                <img src="images/mtd2.png" alt="">
+              </div>
+              <p><span>12 Talleres</span> <br>Hicimos una serie de talleres de investigación participativa con cerca de 75 jóvenes de entre los 18 y 35 años en las ciudades de La Habana, Santa Clara y Santiago de Cuba.</p>
               <br><br>
-              <img src="" alt="">
-              <p>Mid-Term Review: We made a point of the situation. We started digesting what we had learned so far.</p>
+              <div class="trig3"></div>
+              <img class="targ3" src="images/mtd3.png" alt="">
+              <p><span>Revisión a mitad de período</span> <br>Nos reunimos en una granja para digerir lo que habíamos aprendido hasta ahora.</p>
               <br><br>
-              <img src="" alt="">
-              <p>Internships: Our Cuban researchers began their internships which involved running interviews with more than 30 experts, institutions and community organizations. </p>
+              <div class="trig4"></div>
+              <img class="targ4" src="images/mtd4.png" alt="">
+              <p><span>Prácticas</span> <br>Nuestros investigadores cubanos realizaron entrevistas con más de 30 expertos, instituciones y organizaciones comunitarias.</p>
               <br><br>
-              <img src="" alt="">
-              <p>Final Review Workshop: We got our group of Cuban researchers back together in the same place to assess what we had collectively learned.</p>
+              <div class="trig5"></div>
+              <img class="targ5" src="images/mtd5.png" alt="">
+              <p><span>Taller de revisión final:</span> <br>Los investigadores cubanos se reunieron durante una semana para evaluar lo que habíamos aprendido colectivamente.</p>
               <br><br>
-              <img src="" alt="">
-              <p>Sharing: We agreed on our lessons learned and shared them via blogs, a photo book of recommendations and in international conferences.</p>
+              <div class="trig6"></div>
+              <img class="targ6" src="images/mtd6.png" alt="">
+              <p><span>Compartiendo</span> <br>Acordamos nuestras lecciones aprendidas y las compartimos a través de entradas de blog, un libro de fotos de recomendaciones y en conferencias internacionales.</p>
               <br><br>
             </div>
           </div>
           <div class="separar"></div>
           <div class="parte" id="cap1-p4">
-            <video src="video\landscape.mp4" autoplay loop muted></video>
+            <img src="images/jovenes1.JPG" alt="">
             <div class="contenedor">
             </div>
           </div>
-          <div class="separar"></div>
+          <div class="separar sin-espacio"></div>
           <div class="parte" id="cap1-p5">
+            <video src="video\cascada_2.mp4" autoplay loop muted></video>
             <div class="contenedor">
-              <p class="marg2">So we wanted to create a space for young leaders to connect with each other, and create synergies.</p>
+              <p class="marg2">Con esto quisimos crear un espacio para que los jóvenes líderes interactúen con otros, y creen sinergia.</p>
             </div>
           </div>
 
@@ -158,37 +214,547 @@
       </div>
 
       <div id="cap2" class="seccion">
-        <h1 class="capitulo">Chapter 2: Researchers</h1>
+
         <div class="contenedor">
           <img src="images/cuba.jpg" alt="">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="locacion">
+            <p class="havana">Habana</p>
+          </div>
+          <div class="locacion">
+            <p class="santa">Santa Clara</p>
+          </div>
+          <div class="locacion">
+            <p class="santiago">Santiago de Cuba</p>
+          </div>
+          <div class="invest">
+            <div class="cerrar">+</div>
+            <div>
+              <div class="foto ft1"></div>
+              <div class="descripcion">
+              <h2>Roydes</h2>
+              <p>Soy Roydes. Tengo 24 años y estudio derecho en la universidad de la Habana. Me considero una persona curiosa. Incluso si soy un poco serio, cuando estoy con mis amigos soy capaz de liberar estas energías cósmicas que tienden a mantenerse cerradas debido a mi perfil académico. Puedo ser tu mejor amigo, pero si haces o dices algo que no me gusta - ¡ten cuidado! A veces digo cosas sin pensar.</p>
+              </div>
+            </div>
+            <div>
+              <div class="foto ft2"></div>
+              <div class="descripcion">
+              <h2>Liliet</h2>
+              <p>Mi nombre es Liliet, pero todos me llaman Lilo, porque me parezco el protagonista de Lilo y Stitch. Estoy en mi tercer año de derecho y la ley es mi pasión. Paso mucho tiempo centrándome en mis estudios, pero en realidad me encanta bailar y hacer bromas. Me encantan las películas y las obras teatrales. Mis amigos dicen que soy un tornado. Me gusta la autenticidad y no puedo soportar las personas falsas...</p>
+              </div>
+            </div>
+          </div>
+          <div class="invest fotos2">
+            <div class="cerrar">+</div>
+            <div>
+              <div class="foto ft1"></div>
+              <div class="descripcion">
+              <h2>Jose Ernesto</h2>
+              <p>Hola, me llamo Jose Ernesto, tengo 23 y soy periodista. Como joven y como cubano, me interesa tratar de entender el mundo que me rodea. Mi gran pasión es la literatura; He estado escribiendo desde que era pequeño. Me gusta tener buenas conversaciones con amigos, escuchar buena música y dar largos paseos por la playa. Creo que las cosas empiezan a cambiar cuando decidimos cambiarlas. Por esta razón, nunca me ha gustado estar con los brazos cruzados.</p>
+              </div>
+            </div>
+            <div>
+              <div class="foto ft2"></div>
+              <div class="descripcion">
+              <h2>Saily</h2>
+              <p>Yo soy tú, yo soy él, yo soy nosotros, yo soy todos y soy ellos. Estoy aquí y quiero estar allí. Soy cubano, tengo sueños para compartir, tengo muchas historias que contar, y muchas más todavía para vivir. Tengo amigos, un hermano y una ciudad hermosa. A veces no sé qué hacer con todo lo que tengo. Esta vez aunque lo hago; te voy a presentar mi Cuba.</p>
+              </div>
+            </div>
+            <div>
+              <div class="foto ft3"></div>
+              <div class="descripcion">
+              <h2>Roberto</h2>
+              <p>Me encanta la sencillez. Nacer en Cuba me ha convertido en un joven "revolucionario" y cooperativo. Este año, me graduaré en ingeniería agraria de la Universidad Central de las Villas en Santa Clara. Como un buen cubano, me encanta ir de fiesta pero, a pesar de los estereotipos, realmente no puedo bailar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="invest fotos3">
+            <div class="cerrar">+</div>
+            <div>
+              <div class="foto ft1"></div>
+              <div class="descripcion">
+              <h2>Roxana</h2>
+              <p>Si tuviera que describirme en tres líneas diría feliz, libre, viviendo en los límites, intensa, sensual, sensible, de vez en cuando cursi, una realista, y finalmente 'santiaguera' ... Hola a todos, soy Roxana. Me encanta escribir, fotografiar, compartir un buen café con amigos y el beso de mi madre.</p>
+              </div>
+            </div>
+            <div>
+              <div class="foto ft2"></div>
+              <div class="descripcion">
+              <h2>Dailenis</h2>
+              <p>Mi nombre es Dailenis y la biología es mi pasión. Tengo 27 años, amo la naturaleza, los deportes y lo más importante, mi hija.</p>
+              </div>
+            </div>
+            <div>
+              <div class="foto ft3"></div>
+              <div class="descripcion">
+              <h2>Adriel</h2>
+              <p>Un cubano a través y a través, amo la música y el baile. Mis pasiones son la literatura, las películas y todas las oportunidades al azar que la vida trae consigo. Intento constantemente entender y responder a muchas preguntas que están corriendo sin cesar por mi cabeza. Aquí, usted tendrá la oportunidad de aprender acerca de algunos de ellos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="intro">
+          <h1 class="capitulo">Capítulo 2: Researchers</h1>
+          <p>
+            Pasamos 7 meses en Cuba trabajando con 10 jóvenes investigadores y 75 jóvenes de 3 ciudades: La Habana, Santa Clara y Santiago de Cuba.
+            <br>
+            Entra a cada punto del mapa para conocer a nuestros jóvenes investigadores cubanos.
+          </p>
+          <p class="mns-auxiliar">Explorar</p>
+        </div>
+        <audio src="video/cantando.mp3" loop id="cantando">
+        </audio>
+      </div>
+
+      <div id="cap3" class="seccion">
+        <video id="paisaje" src="video/paisajes.mp4" loop></video>
+        <div class="efecto"></div>
+        <div id="dibujos" class="contenedor">
+          <img src="images/formula.png" alt="">
+          <div class="elem nube">
+          </div>
+          <div class="elem arbol">
+          </div>
+          <div class="elem choza">
+          </div>
+          <div class="elem sol">
+          </div>
+          <div class="elem grupo">
+          </div>
+        </div>
+        <h1 class="titulo">Cooperación <span>+</span> Medio ambiente <span>=</span></h1>
+        <div class="resultado nube">
+          <div class="slide">
+            <div class="translate" data-name="Salvar">
+              <img src="images/palabras/n-1.jpg"></div>
+            <div class="translate" data-name="Mundo">
+              <img src="images/palabras/n-2.jpg"></div>
+            <div class="translate" data-name="Esperanza mundial">
+              <img src="images/palabras/n-3.jpg"></div>
+            <div class="translate" data-name="Futuro">
+              <img src="images/palabras/n-4.jpg"></div>
+            <div class="translate" data-name="vida plena">
+              <img src="images/palabras/n-5.jpg"></div>
+
+          </div>
+        </div>
+        <div class="resultado arbol">
+          <div class="slide">
+            <div class="translate" data-name="Creación">
+              <img src="images/palabras/a-1.jpg"></div>
+            <div class="translate" data-name="Únete a la ecología">
+              <img src="images/palabras/a-2.jpg"></div>
+            <div class="translate" data-name="Vida - Amor">
+              <img src="images/palabras/a-3.jpg"></div>
+            <div class="translate" data-name="Vida">
+              <img src="images/palabras/a-4.jpg"></div>
+            <div class="translate" data-name="Vida">
+              <img src="images/palabras/a-5.jpg"></div>
+          </div>
+        </div>
+        <div class="resultado choza">
+          <div class="slide">
+            <div class="translate" data-name="Desarrollo">
+              <img src="images/palabras/c-1.jpg"></div>
+            <div class="translate" data-name="Cambio">
+              <img src="images/palabras/c-2.jpg"></div>
+            <div class="translate" data-name="Recrear">
+              <img src="images/palabras/c-3.jpg"></div>
+            <div class="translate" data-name="Unidad">
+              <img src="images/palabras/c-4.jpg"></div>
+            <div class="translate" data-name="Acción">
+              <img src="images/palabras/c-5.jpg"></div>
+          </div>
+        </div>
+        <div class="resultado sol">
+          <div class="slide" id="scroll">
+            <div class="translate" data-name="Hoy">
+              <img src="images/palabras/s-1.jpg"></div>
+            <div class="translate" data-name="Salud">
+              <img src="images/palabras/s-2.jpg"></div>
+            <div class="translate" data-name="Conocimiento">
+              <img src="images/palabras/s-3.jpg"></div>
+            <div class="translate" data-name="¡Sí!">
+              <img src="images/palabras/s-4.jpg"></div>
+          </div>
+        </div>
+        <div class="resultado grupo">
+          <div class="slide">
+            <div class="translate" data-name="Social">
+              <img src="images/palabras/g-1.jpg"></div>
+            <div class="translate" data-name="Unión">
+              <img src="images/palabras/g-2.jpg"></div>
+            <div class="translate" data-name="Éxito">
+              <img src="images/palabras/g-3.jpg"></div>
+            <div class="translate" data-name="Diverso">
+              <img src="images/palabras/g-4.jpg"></div>
+            <div class="translate" data-name="Victoria">
+              <img src="images/palabras/g-5.jpg"></div>
+          </div>
+        </div>
+
+        <div class="intro">
+          <video src="video/cascada_1.mp4" autoplay loop></video>
+          <h1 class="capitulo">Capítulo 3: Fórmula</h1>
+          <p>
+            Les pedimos a nuestros investigadores que formularan una pregunta para un ejercicio de fotografía. Haz clic en los diferentes elementos de la ilustración para ver que respondieron los jóvenes en Cuba.
+          </p>
+          <p class="mns-auxiliar">Explorar</p>
         </div>
 
       </div>
 
-      <div id="cap3" class="seccion">
-        <video src="video/cascada_1.mp4" autoplay loop>
-
-        </video>
-        <h1 class="capitulo">Chapter 3: Formula</h1>
-      </div>
-
       <div id="cap4" class="seccion">
-        <h1 class="capitulo">Chapter 4: "Chinito"</h1>
+
+        <div id="jardin">
+          <img class="inicial" src="images/garden.JPG">
+          <div>
+            <img class="fondo" src="images/garden.JPG">
+            <img class="fondo" src="images/garden.JPG">
+            <img class="fondo" src="images/garden.JPG">
+            <img class="fondo" src="images/garden.JPG">
+          </div>
+          <div class="puntos">
+            <div class="punto"></div>
+            <div class="punto"></div>
+            <div class="punto"></div>
+          </div>
+        </div>
+        <div class="historia">
+          <p>“(…)El chinito, como cariñosamente lo apodamos, me mostró que inconscientemente la naturaleza nos saluda, nos ayuda, es nuestra amiga y nosotros ni tan siquiera le damos un pedacito de nuestro tiempo. Reflexioné y me acerqué al huertito tan querido por el chino, que por cierto pudiera ser mi abuelito, y entonces me di cuenta que el ambiente a mi alrededor cambió totalmente de repente.”
+          </p>
+
+          <a href="#"><p class="link inv">Read full story</p></a>
+          <a href="#"><p class="link inv">listen audio</p></a>
+
+          <audio src="video/chinitoEN.mp3" controls></audio>
+          <div class="texto">
+            <h1>Chinito y el jardín</h1>
+            <p>
+              En el lugar donde vivo hay un pequeño huerto, realmente nunca me había fijado, en este ir y venir de la facultad, en este ajetreo diario, el huerto me saludaba todos los días a la entrada de la residencia y yo ni caso le hacía, absorta en mi mundo.   Fue increíble que me diera cuenta con un hecho muy lamentable. Uno de los guardianes de nuestro sueño está un poco enfermo, algo que me causó mucha tristeza porque es un viejito muy cariñoso y preocupado por nosotros, pero mi sorpresa fue cuando el anciano entre lágrimas se lamentaba de que no podría cuidar más de su huerto que tanta alegría le daba en su larga vida, ese lugarcito que le permitía mantener su fuerte contacto con la naturaleza y sus productos, ese espacio que lo teletransportaba a su ciudad natal, a ese campo que lo vio crecer; y entonces me di cuenta que si existen personas que tiene un vínculo mucho más fuerte del que ellos mismo piensan con la madre natura.
+              <br><br>
+              El chinito, como cariñosamente lo apodamos, me mostró que inconscientemente la naturaleza nos saluda, nos ayuda, es nuestra amiga y nosotros ni tan siquiera le damos un pedacito de nuestro tiempo. Reflexioné y me acerqué al huertito tan querido por el chino, que por cierto pudiera ser mi abuelito, y entonces me di cuenta que el ambiente a mi alrededor cambió totalmente de repente.   Me rodeé de todo tipo de plantas medicinales, aromáticas y hasta una de plátano me saludaba con un racimo que nadie podía tocar sin el consentimiento del protector del huerto. Me sentí un poco culpable, pero a la vez muy  confortada con este espacio que era un pedazo más y se convirtió, en las manos del chino y los demás custodios, en un lugar productivo.
+              <br><br>
+              El chino me explicaba muy orgulloso todo lo que yo en mi ajetreo nunca me había acercado a ver, los olores me envolvían entre plantas de orégano, tilo y menta, descubrí que eran usadas algunas de ellas en la elaboración de nuestra comida diaria por los cocineros de la beca y salí de allí entendiendo perfectamente  por qué el chinito estaba tan triste, creo que hasta yo estoy ahora escribiendo un poco triste también, porque el amor y la dedicación que le han dado a ese lugar es incomparable y las ganas de seguir viviendo de este ancianito tan lindo, como yo le digo, está contenida en ese huerto que él creó y cuidó durante tanto tiempo.   Creo que ahora ya ese huerto no pasará desapercibido ante mis ojos, a lo mejor no todos los días, pero si le dedicaré un poco de mi tiempo aunque sea para saludarlo.
+              <br><br>
+            </p><br><br>
+            <p><i>–Laritza-</i></p>
+            <p>Estudiante de Geografía en la Universidad de la Habana y parte del equipo de investugación Recrear/CYEN</p>
+          </div>
+        </div>
+
+        <div class="intro">
+          <h1 class="capitulo">Capítulo 4: "Chinito"</h1>
+          <p>Agita el mouse sobre las marcas rojas para descubrir una historia escondida</p>
+          <p class="mns-auxiliar">Explorar</p>
+        </div>
       </div>
 
       <div id="cap5" class="seccion">
-        <h1 class="capitulo">Chapter 5: Debate</h1>
+        <div class="contenedor">
+          <div class="debate">
+            <div id="d1" class="conversacion">
+              <div class="scroll"><img src="images/scroll.png"></div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Permacuturalista</p>
+                  <p>Liliet, ¿qué sabes de la planta de marabú?</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Liliet</p>
+                  <p>¿Por qué? Todo el mundo sabe que la inútil marihuana es básicamente una de las mayores amenazas a nuestra isla!</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Permacuturalista</p>
+                  <p>¿Qué más sabes sobre él?</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Liliet</p>
+                  <p>¡Es imposible deshacerse de los malditos matorrales!
+                    Esto hace que sea difícil limpiar más tierras para cultivar más cultivos alimenticios en el país.</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Permacuturalista</p>
+                  <p>
+                    Bueno, en realidad, todo esto está mal.
+                    Si te deshaces del marabú, ¿qué pasa?
+                    Bueno, exponer el suelo a la luz solar directa, despojándola de la humedad y los nutrientes esenciales para apoyar la vida vegetal y animal.
+                    El Marabú, con sus raíces profundas, ayuda a reintroducir el nitrógeno y prevenir la erosión del suelo.
+                    Y esto es sólo el principio.
+                    La planta es también alimento para muchos animales. El marabú muerto fertiliza el suelo, por no mencionar que la madera es una valiosa fuente de combustible para cocinar y calentar.
+                    <br><br>
+                    El marabú es un elemento central de su ecosistema.
+                    Se integra en un sistema natural que se basa precisamente en la interconexión y la interdependencia entre los elementos: la combinación específica y la variedad de la vegetación, la vida animal, el suelo, el agua y las condiciones climáticas.
+                    Si quitas el marabú, bueno, alteras completamente este equilibrio natural y rompes el ciclo biológico.
+                  </p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Liliet</p>
+                  <p>Ah, interesante. Entonces, ¿por qué todos odiamos al marabú?</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Permacuturalista</p>
+                  <p>Bueno, una vez que la producción agroindustrial de caña de azúcar en gran escala disminuyó hace unas dos décadas en Cuba, la tierra que se había utilizado para cultivar la caña de azúcar fue abandonada. El cultivo de la caña de azúcar dejó atrás un suelo fértil que fue invadido con el marabú.
+                  <br><br>
+                  El punto de vista dominante es que el marabú impide que la gente use estas tierras ociosas y las haga cultivables. Irónicamente, la "maleza" ha ayudado a rejuvenecer la tierra y la biodiversidad.</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Liliet</p>
+                  <p>Ya veo ... pero el marabú es muy difícil de deshacer cuando quieres empezar a cultivar de nuevo!</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Permacuturalista</p>
+                  <p> Bueno, el marabú está allí precisamente porque no estás cultivando. El desafío es darse cuenta de que todo en la naturaleza tiene un papel, incluso cuando parece "malo". El desafío es cultivar alimentos de manera sostenible de una manera que mantenga y refuerce este ecosistema natural. La filosofía en la permacultura es comenzar observando todos los elementos en un lugar específico (clima, composición del suelo, vegetación acuática, vida animal, etc.).
+                  <br><br>
+                  A continuación, se intenta diseñar un sistema de contabilidad y reforzar la interconexión entre todos estos elementos involucrados en ese ecosistema en particular. Así que lo que estoy diciendo es que tenemos que ser creativos y sacar el máximo provecho del marabú.</p>
+                </div>
+              </div>
+              <p>Conversación entre Liliet y un permacultursta (La Habana, Cuba).<br> La conversación anterior se basa en una entrevista que tuvimos con Silvio. Silvio y su familia han diseñado una finca familiar urbana (Finca Mambí) basada en los principios de la permacultura.</p>
+            </div>
+            <div class="titulo">
+              <h1>Todo en la naturaleza tiene un papel, incluso cuando parece "malo"</h2>
+            </div>
+          </div>
+
+          <div class="debate">
+            <div class="titulo">
+              <h1>El crecimiento económico de Cuba será bueno para el medio ambiente?</h2>
+            </div>
+            <div id="d2" class="conversacion">
+              <div class="scroll"><img src="images/scroll.png"></div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Estudiante de Geografía</p>
+                  <p>¿Cómo te sientes con toda la contaminación en La Habana?</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Taxista</p>
+                  <p> Bueno, el problema es que no podemos comprar autos nuevos. Los coches que tenemos son de los años 50, ¡por supuesto que contaminan mucho! Si pudiéramos comprar coches nuevos, las cosas serían mejores. Podríamos introducir una ley para limitar los coches que producen demasiada contaminación, pero sin una economía mejor simplemente no funcionará.</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Especialista medioambiental</p>
+                  <p>Sin duda, es esencial fortalecer la economía; Necesitamos tecnología para proteger el medio ambiente.</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Observadora</p>
+                  <p>¿Quién dice que con más crecimiento económico tendremos menos contaminación? Podríamos tener mejores coches, pero si tenemos tres veces más coches, habrá más contaminación y la ciudad estará más llena. Además, el problema es que los coches nuevos están diseñados para tener una vida útil más corta. Sí, todavía usamos coches de los años 50, pero ¿con qué frecuencia tendríamos que cambiar nuestros autos si pudiéramos permitirnos otros nuevos? ¿Y qué tipo de daño ambiental sería causado por el aumento del consumismo?</p>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="foto"></div>
+                <div class="textos">
+                  <p class="usuario">Observador</p>
+                  <p>Bueno, estoy de acuerdo. Curiosamente, los países desarrollados contribuyen más a la degradación del medio ambiente, a pesar de contar con mejores tecnologías.</p>
+                </div>
+              </div>
+              <p>El desarrollo social y económico requiere más creatividad. El problema no es una simple cuestión de desarrollo económico. Los verdaderos y enormes problemas son los modelos de crecimiento económico.
+              <br> <br>
+              Facilitamos un debate en La Habana con un grupo de 25 jóvenes. Los dividimos en tres grupos. Un grupo estaba haciendo preguntas, otro grupo estaba respondiendo, y el último grupo estaba observando. A los participantes se les pidió que se pusieran en la piel de un personaje diferente: un periodista de Granma (un periódico local), un ecologista, un taxista, una ama de casa, un joven músico. La idea era reflexionar sobre cómo las diferentes personas se relacionan con el problema del cambio climático en Cuba.</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="intro">
+          <img src="images/debate.JPG" alt="">
+          <div class="efecto"></div>
+          <h1 class="capitulo">Capítulo 5: Debate</h1>
+          <p>Por un lado, los cubanos exploran cómo vivir en sintonía con la naturaleza y sentir que tienen la responsabilidad de actuar de una manera ambientalmente consciente. Por otro lado, también sienten que tienen derecho a crecer económicamente. ¿Son estos sueños mutuamente exclusivos?</p>
+          <p class="mns-auxiliar">Explorar</p>
+        </div>
       </div>
 
       <div id="cap6" class="seccion">
-        <h1 class="capitulo">Chapter 6: Treasure Hunt</h1>
+        <div class="fondo"></div>
+
+        <div class="contenedor">
+          <img src="images/mapa.png" alt="">
+          <div class="indicador girar">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div class="descripcion">
+                <h1>10 cosas que te hacen feliz</h1>
+                <p>
+                  ¿Cuáles son las cosas que te hacen feliz? Pongan una canción (recomendamos la
+                  <a class="link inv" href="https://www.youtube.com/watch?v=wdwQD9r8m1M" target="_blank">arrival of the birds</a>
+                  ) y reflexionen sobre todos esos momentos, personas, lugares y actividades que se asocien con la felicidad en su vida.
+                </p>
+                <p class="aprendizaje">
+                  <span>Lección aprendida en Cuba</span><br><span>¡En Cuba nos dimos cuenta de que los jóvenes apreciaban profundamente la familia, el béisbol y el sexo! Ser capaces de entender los valores de la gente nos dio una base para entenderlos como personas. Debe ser una investigación acción participativa!
+                  </span>
+                </p>
+              </div>
+              <div class="actividad">
+                <input type="text" name="feliz" maxlength="27" autofocus placeholder="¿Qué te hace feliz?">
+                <div class="agregar">+</div>
+
+                <div id="feliz">
+                  <ul>
+                  </ul>
+                </div>
+                <div class="ok bloq"><h1><span>0</span> / 10</h1></div>
+              </div>
+            </div>
+          </div>
+          <div class="indicador girar">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div class="descripcion">
+                <h1>Community Map</h1>
+                <p>Imagine su comunidad. Dibújelo de la manera en que lo ve en su mente. ¡No tiene que ser a escala! Luego dibuje corazones sobre los lugares que son ambientalmente conscientes y (x) sobre los lugares donde hay abandono.</p>
+                <p class="aprendizaje"><span>Lección aprendida en Cuba</span><br><span>
+                  Proyectar la experiencia individual y colectiva de la gente en la comunidad de esta manera nos permite ver el tejido social invisible en juego. Para nosotros, fue una gran manera de aprender acerca de las iniciativas ambientales positivas que suceden en cada ciudad al tiempo que también destaca los lugares de abandono.
+                </span></p>
+              </div>
+              <div class="actividad">
+
+                <div id="mapaComunidad"></div>
+                <div></div>
+                <div></div>
+                <div class="ok bloq"><h1>Dibuja algo</h1></div>
+              </div>
+            </div>
+          </div>
+          <div class="indicador girar">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div class="descripcion">
+                <h1>Pasado, Presente, Futuro</h1>
+                <p>Nuestra relación con la naturaleza no siempre ha sido la misma. Recuerde la generación de sus abuelos, su propia generación, y qué hay de sus hermanitos / sobrinos / sobrinas - ¿cómo se relacionan con la naturaleza frente a ellos? ¿Cuál es la palabra que usaría para describir cada relación?</p>
+                <p class="aprendizaje"><span>Lección aprendida en Cuba</span><br><span>
+                  Hicimos este ejercicio usando marcos congelados para llevar algunas de sus interpretaciones a la vida. Lo que encontramos es que la generación pasada de Cuba tenía una relación más fuerte con la naturaleza, a pesar de que no estaban versados en la generación actual de la charla sobre el clima.
+                </span></p>
+              </div>
+              <div class="actividad" id="ppf">
+                <input autofocus maxlength="15" type="text" name="Past" value="" placeholder="Una palabra para la generación pasada">
+                <input maxlength="13" type="text" name="Future" value="" placeholder="Una palabra para tu generación">
+                <input maxlength="13" type="text" name="Future" value="" placeholder="Una palabra para las generaciones futuras">
+                <div class="ok bloq"><h1>Click para terminar</h1></div>
+              </div>
+            </div>
+          </div>
+          <div class="indicador girar">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div class="descripcion">
+                <h1>Mapa del mundo</h1>
+                <p>The world is a pretty big place that we hardly realize that we barely know it ourselves. ¡Dibuje el mapa del mundo sin mirar ninguna referencia! ¡Represente lo que quiera!</p>
+                <p class="aprendizaje"><span>Lección aprendida en Cuba</span><br><span>
+                  ¡Wow! Los cubanos están profundamente afectados por su clima sociopolítico. Se mostró en la forma en que los cubanos decidieron representar el mundo: como un hombre gordo, Cuba rodeada de murallas, cubanos en el exilio o Cuba en el centro de un mundo contaminado.
+                </span></p>
+              </div>
+              <div class="actividad">
+                <div id="mapaMundo"></div>
+                <div></div>
+                <div></div>
+                <div class="ok bloq"><h1>Dibuja algo</h1></div>
+              </div>
+            </div>
+          </div>
+          <div class="indicador girar">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div class="descripcion">
+                <h1>Carta a la autoridad</h1>
+                <p>Podríamos tener muchas ideas sobre nuestra comunidad, algunas están escondidas en la parte de atrás de nuestras mentes. ¿Qué mejor manera para sacarlas de ahí que escribiendo una carta a una figura de autoridad dentro de su comunidad? Elija a quien quiera que esté en su comunidad y escríbales sobre la acción ambiental que le gustaría ver en su comunidad.</p>
+                <p class="aprendizaje">
+                  <span>Lección aprendida en Cuba</span><br><span>Los cubanos son muy buenos en articularse cuando se trata de hacer lo que necesitan. Utilizaron este espacio para señalar las áreas de abandono y sugerir iniciativas prácticas.
+                  </span></p>
+              </div>
+              <div class="actividad" id="carta">
+                <textarea rows="10" cols="20" maxlength="800" autofocus></textarea>
+                <div class="ok bloq"><h1>Escribir una carta</h1></div>
+              </div>
+            </div>
+          </div>
+          <div class="indicador girar tesoro">
+            <div class="base"></div>
+            <div class="envoltura">
+              <div id="tesoro"></div>
+              <p><span class="link inv" id="descargar">Descarga la imagen</span> subela y comparte tu experiencia en Facebook o Instagram con el hashtag #ChangingTheClimate</p>
+            </div>
+          </div>
+          <div class="cerrar">X</div>
+
+        </div>
+
+
+
+        <div class="intro">
+          <img src="images/tiza2.JPG" alt="">
+          <div class="efecto"></div>
+          <h1 class="capitulo">Capítulo 6: Busqueda del tesoro</h1>
+          <p>Hasta ahora, usted ha tenido una visión de nuestras lecciones aprendidas en Cuba. Pero, ¿cómo llegamos allí?
+            <br>
+            Una de las formas en que manejamos esto con nuestros participantes es llevándolos a través de una búsqueda del tesoro. ¿Por qué no lo intenta?
+          </p>
+          <p class="mns-auxiliar">Explorar</p>
+        </div>
       </div>
 
       <div id="cap7" class="seccion">
-        <h1 class="capitulo">Chapter 7: Learning</h1>
+        <div class="intro">
+          <video id="timelapse"src="video/timelapse-noche.mp4"></video>
+          <div class="pantalla"></div>
+          <div class="foto"></div>
+          <div class="efecto"></div>
+        </div>
+        <div class="envoltura" id="learning">
+          <div class="scroll">
+            <img src="images/scroll.png" alt="">
+          </div>
+          <h1 class="capitulo">DEFENDEMOS LO QUE SENTIMOS</h1>
+          <div class="contenedor">
+            <div class="trgP"></div>
+            <p>Probablemente estas palabras sean lo más importantes que aprendimos en Cuba</p>
+            <div class="trgP"></div>
+            <p>También aprendimos que Cuidar el medio ambiente es algo muy personal.</p>
+            <div class="trgP"></div>
+            <p>Muchos jóvenes cubanos tienen una comprensión íntima de lo que se necesitaría para mejorar los esfuerzos ambientales en su comunidad.</p>
+            <div class="trgP"></div>
+            <p>Aprendimos que sus pensamientos iniciales sobre cómo proteger el medio ambiente pueden estar equivocados ... Todo tiene un papel en la naturaleza. ¡Incluyéndonos!</p>
+            <div class="trgP"></div>
+            <p>Nos dimos cuenta de que Cuba está cambiando rápidamente. Las cosas están cambiando aún más rápido ahora con el levantamiento del embargo.</p>
+            <div class="trgP"></div>
+            <p>Nos preguntamos cómo será el desarrollo de Cuba. ¿Priorizarán la construcción de una relación íntima con la naturaleza o seguirán el camino del desarrollo occidental "clásico"?</p>
+            <div class="trgP"></div>
+            <p>Cuba está llena de paradojas, pero si hay un momento para aprender de la experiencia cubana es ahora. Creemos que hay algo que los países occidentales podrían aprender de la relación de los jóvenes cubanos con la naturaleza.</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -197,6 +763,8 @@
     <script src="js\libs\jquery.nicescroll.min.js"></script>
     <script src="js\libs\TweenMax.min.js"></script>
     <script src="js\libs\velocity.min.js"></script>
+    <script src="js\libs\p5.min.js"></script>
+    <script src="js\libs\p5.dom.js"></script>
 
     <script src="js/scrollmagic/ScrollMagic.min.js"></script>
     <script src="js\scrollmagic\plugins\debug.addIndicators.min.js"></script>
@@ -205,6 +773,8 @@
 
     <script src="js/animacion.js"></script>
     <script src="js/script.js"></script>
+
+    <script src="js/sketch/MapaComunidad.js" charset="utf-8"></script>
 
 
   </body>
