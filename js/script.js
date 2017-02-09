@@ -63,7 +63,13 @@ $(document).ready(function() {
       scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false, zindex: -1
     });
   }
-
+  $("#in").click(function(event) {
+    event.preventDefault()
+    $("#info").stop().slideDown(500)
+  });
+  $("#info").mouseleave(function(event) {
+    $(this).stop().slideUp(500)
+  });
   var $capBtn = $('nav>ul>li'),
       $sec = $('#principal>.seccion'),
       enAnim = false,
@@ -224,6 +230,14 @@ $(document).ready(function() {
     $(".inicial").css('-webkit-filter', 'brightness(0.5)');
     $(".historia", "#cap4").delay(2000).fadeIn(3000)
   }
+
+  var linka = $("a", "#cap4")
+  $(linka[1]).click(function(event) {
+    $("audio", "#cap4").css('display', 'block');
+  });
+  $(linka[0]).click(function(event) {
+    $(".texto", "#cap4").css('display', 'block');
+  });
 
   //DEBATE
   var $debateBtn = $(".titulo", "#cap5")
