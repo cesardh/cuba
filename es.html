@@ -5,6 +5,7 @@
     <title>Recrear: Cuba</title>
     <link rel="stylesheet" href="css\estilo.css">
     <link rel="stylesheet" href="css\navegador.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
   <body>
     <div id="load"><div>
@@ -68,7 +69,11 @@
       <a href="#" onclick="toggleFullScreen()"><div>
         <img src="images/fullscreen.png" alt="">
       </div></a>
+      <a id="sh" href="#"><div>
+        <img src="images/compartir.png" alt="">
+      </div></a>
     </div>
+
     <div id="info">
       <div class="contenido">
         <h1>Creditos</h1><br>
@@ -85,6 +90,17 @@
         <br>
         <h2>Carolina López</h2>
         <p>Traducciones</p>
+      </div>
+    </div>
+
+    <div id="share">
+      <div class="contenido">
+        <h1>Compartir</h1><br>
+        <p>Si te gustó el sitio, compartelo en tus redes sociales</p>
+        <br><br>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fcuba.recrearinternational.org%2F&layout=button&mobile_iframe=false&width=79&height=20&appId" width="79" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://cuba.recrearinternational.org" data-text="Changing the climate on cuba">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>
     </div>
 
@@ -670,7 +686,7 @@
             <div class="envoltura">
               <div class="descripcion">
                 <h1>Mapa del mundo</h1>
-                <p>The world is a pretty big place that we hardly realize that we barely know it ourselves. ¡Dibuje el mapa del mundo sin mirar ninguna referencia! ¡Represente lo que quiera!</p>
+                <p>¡Dibuje el mapa del mundo sin mirar ninguna referencia! ¡Represente lo que quiera!</p>
                 <p class="aprendizaje"><span>Lección aprendida en Cuba</span><br><span>
                   ¡Wow! Los cubanos están profundamente afectados por su clima sociopolítico. Se mostró en la forma en que los cubanos decidieron representar el mundo: como un hombre gordo, Cuba rodeada de murallas, cubanos en el exilio o Cuba en el centro de un mundo contaminado.
                 </span></p>
@@ -716,9 +732,7 @@
           <img src="images/tiza2.JPG" alt="">
           <div class="efecto"></div>
           <h1 class="capitulo">Capítulo 6: Busqueda del tesoro</h1>
-          <p>Hasta ahora, usted ha tenido una visión de nuestras lecciones aprendidas en Cuba. Pero, ¿cómo llegamos allí?
-            <br>
-            Una de las formas en que manejamos esto con nuestros participantes es llevándolos a través de una búsqueda del tesoro. ¿Por qué no lo intenta?
+          <p>¿Cómo aprendimos juntos en Cuba? Aprendimos mucho experiencialmente y queremos invitarte a hacer lo mismo. ¡Vamos a jugar!
           </p>
           <p class="mns-auxiliar">Explorar</p>
         </div>
@@ -730,29 +744,35 @@
           <div class="pantalla"></div>
           <div class="foto"></div>
           <div class="efecto"></div>
+          <h2 class="frase">
+            "Equivocadamente vemos a la naturaleza como algo separado de nosotros, como un recurso primario. La naturaleza es nuestra casa. No podemos verlo como un producto para vender."
+            <br>
+            <span>(Ricardo Diaz, Profesor de Bioligía, Universidad de Villa Clara)</span>
+          </h2>
+          <div class="continuar">Continuar</div>
+          <div class="continuar">Continuar</div>
         </div>
         <div class="envoltura" id="learning">
-          <div class="scroll">
-            <img src="images/scroll.png" alt="">
-          </div>
-          <h1 class="capitulo">DEFENDEMOS LO QUE SENTIMOS</h1>
           <div class="contenedor">
-            <div class="trgP"></div>
-            <p>Probablemente estas palabras sean lo más importantes que aprendimos en Cuba</p>
-            <div class="trgP"></div>
-            <p>También aprendimos que Cuidar el medio ambiente es algo muy personal.</p>
-            <div class="trgP"></div>
-            <p>Muchos jóvenes cubanos tienen una comprensión íntima de lo que se necesitaría para mejorar los esfuerzos ambientales en su comunidad.</p>
-            <div class="trgP"></div>
-            <p>Aprendimos que sus pensamientos iniciales sobre cómo proteger el medio ambiente pueden estar equivocados ... Todo tiene un papel en la naturaleza. ¡Incluyéndonos!</p>
-            <div class="trgP"></div>
-            <p>Nos dimos cuenta de que Cuba está cambiando rápidamente. Las cosas están cambiando aún más rápido ahora con el levantamiento del embargo.</p>
-            <div class="trgP"></div>
-            <p>Nos preguntamos cómo será el desarrollo de Cuba. ¿Priorizarán la construcción de una relación íntima con la naturaleza o seguirán el camino del desarrollo occidental "clásico"?</p>
-            <div class="trgP"></div>
-            <p>Cuba está llena de paradojas, pero si hay un momento para aprender de la experiencia cubana es ahora. Creemos que hay algo que los países occidentales podrían aprender de la relación de los jóvenes cubanos con la naturaleza.</p>
+            <h1>Entonces, <span class="rot_int">¿</span>que aprendimos?</h1>
+            <div class="en4">
+              <p>Cuba está llena de paradojas, pero si hay un momento para aprender de la experiencia cubana es ahora. Creemos que hay algo que los países occidentales podrían aprender de la relación de los jóvenes cubanos con la naturaleza.</p>
+              <p>Muchos jóvenes cubanos tienen una comprensión íntima de lo que se necesitaría para mejorar los esfuerzos ambientales en su comunidad.</p>
+              <p>Nos dimos cuenta de que Cuba está cambiando rápidamente. Las cosas están cambiando aún más rápido ahora con el levantamiento del embargo.</p>
+              <p>Nos preguntamos cómo será el desarrollo de Cuba. ¿Priorizarán la construcción de una relación íntima con la naturaleza o seguirán el camino del desarrollo occidental "clásico"?</p>
+            </div>
           </div>
         </div>
+        <div class="envoltura" id="learning2">
+          <div class="contenedor">
+            <p>Aprendimos que el cuidado del medio ambiente es un asunto muy personal porque...</p>
+            <h1>Uno defiende lo que siente</h1>
+            <h2 class="frase">
+              "Siento que soy nada más y nada menos que cualquier otra parte de la naturaleza. Soy como una hormiga, soy como un pájaro. No soy ni única, ni mejor, ni más valiosa que cualquier otra parte de la naturaleza. Todos somos importantes." <br>
+              <span>(Carmen Cabrera)</span>
+            </h2>
+
+          </div>
       </div>
 
     </div>

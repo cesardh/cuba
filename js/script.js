@@ -57,7 +57,7 @@ $(document).ready(function() {
     $("#principal").css('opacity', 1);
   });
   animaciones()
-  var arrSeccion = [$("#cap1"), $("#d1"), $("#d2"), $("#learning")];
+  var arrSeccion = [$("#cap1"), $("#d1"), $("#d2")];
   for (var i = 0; i < arrSeccion.length; i++) {
     arrSeccion[i].niceScroll({
       scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false, zindex: -1
@@ -69,6 +69,13 @@ $(document).ready(function() {
     $("#info").stop().slideDown(500)
   });
   $("#info").mouseleave(function(event) {
+    $(this).stop().slideUp(500)
+  });
+  $("#sh").click(function(event) {
+    event.preventDefault()
+    $("#share").stop().slideDown(500)
+  });
+  $("#share").mouseleave(function(event) {
     $(this).stop().slideUp(500)
   });
   var $capBtn = $('nav>ul>li'),
@@ -95,9 +102,9 @@ $(document).ready(function() {
       })
       .toggleClass('activo');
 
-      if (index > 1 && !$audioFondo.paused) {
+      if (index != 7 && index > 1 && !$audioFondo.paused) {
         apagarAudio($audioFondo)
-      }else if($audioFondo.paused && index <= 1){
+      }else if($audioFondo.paused && (index <= 1 || index == 7)){
         encenderAudio($audioFondo)
       }
       if(index == 1){videoViaje.play()}else{videoViaje.pause()}
@@ -111,7 +118,8 @@ $(document).ready(function() {
         apagarAudio(videoPaisaje)
       }
       if (index == 7) {
-        $(".pantalla", "#cap7").delay(2000).animate({opacity: 0}, {
+        $(cita[0]).delay(200).fadeIn(1000)
+        $(".pantalla", "#cap7").delay(2500).animate({opacity: 0}, {
           duration: 2000,
           start: function(){
             videoTimelapse.currentTime = 0
@@ -119,11 +127,12 @@ $(document).ready(function() {
           },
           complete: function(){
             $(this).css('background', 'white');
+
             $(".efecto", "#cap7").delay(2000).animate({opacity: 0.5}, {
               duration: 2000,
               complete: function(){
                 $(".foto", "#cap7").delay(500).fadeIn(1500);
-                $("#learning").delay(700).fadeIn(1500)
+                $(continuar[0]).fadeIn(500);
               }
             })
             $(this).delay(2000).animate({opacity: 1}, 2500)
@@ -132,6 +141,40 @@ $(document).ready(function() {
       }
     }
   });
+
+  //LEARNING
+  var cita = $(".frase", "#cap7")
+  var continuar = $(".continuar", "#cap7")
+  $(continuar[0]).click(function(event) {
+    $(cita[0]).fadeOut({
+      duration:500,
+      complete: function(){
+        $(this).remove()
+      }
+    })
+    $("#learning").delay(700).fadeIn({
+      duration: 1000,
+      complete: function(){
+        $(this).addClass('animar')
+      }
+    });
+    $(this).remove()
+    $(continuar[1]).delay(4000).fadeIn(500)
+  });
+  $(continuar[1]).click(function(event) {
+    $("#learning").fadeOut(500)
+    $("#learning2").delay(700).fadeIn({
+      duration: 500,
+      complete: function(){
+        $(this).addClass('animar')
+      }
+    })
+    $(this).fadeOut(500)
+  });
+
+
+
+
 
   $("#retratos div").click(function(event) {
     $(this).find('p').css({
