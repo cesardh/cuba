@@ -63,6 +63,7 @@ $(document).ready(function() {
       scrollspeed: 200, mousescrollstep: 20, horizrailenabled: false, zindex: -1
     });
   }
+
   $("#in").click(function(event) {
     event.preventDefault()
     $("#info").stop().slideDown(500)
@@ -177,18 +178,47 @@ $(document).ready(function() {
     $($inv[index]).addClass('mostrar')
   })
 
-
+  //FORMULA
   var $dibujo = $(".elem", "#cap3")
   var $resultado = $(".resultado", "#cap3")
+  var cerrarFotos = $(".cerrar", "#cap3")
+  var $slideFotos = $(".slide", "#cap3" )
+  var indexFotos = 0
+  cerrarFotos.hide()
   $dibujo.click(function(event) {
-    var index = $dibujo.index(this);
-    $($resultado[index]).addClass('mostrar');
+    indexFotos = $dibujo.index(this);
+    $($resultado[indexFotos]).addClass('mostrar');
     $capBtn.fadeOut('fast');
+    cerrarFotos.fadeIn("fast")
   });
-  $resultado.click(function(event) {
-    $(this).removeClass('mostrar')
+  var interScroll
+  var mx
+  var mx
+  $resultado.mousemove(function(e) {
+    mx = e.pageX
+  });
+  $resultado.mouseenter(function(event) {
+    var w = $(this).width()
+    var sl = $($slideFotos[indexFotos]).scrollLeft()
+    interScroll = setInterval(function(){
+      var d = 20
+      if (mx < w/2 - 150) {
+        sl -= d
+      } else if (mx > w/2 + 150) {
+        sl += d
+      }
+      $($slideFotos[indexFotos]).scrollLeft(sl)
+    }, 1000/25)
+  });
+    $resultado.mouseleave(function(event) {
+      clearInterval(interScroll)
+    });
+  cerrarFotos.click(function(event) {
+    $($resultado[indexFotos]).removeClass('mostrar');
     $capBtn.fadeIn('fast');
+    cerrarFotos.fadeOut("fast")
   });
+
 
   //CHINITO
   var $punto = $(".punto"),
