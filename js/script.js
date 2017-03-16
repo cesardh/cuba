@@ -145,6 +145,7 @@ $(document).ready(function() {
   //LEARNING
   var cita = $(".frase", "#cap7")
   var continuar = $(".continuar", "#cap7")
+  var final = $("#final")
   $(continuar[0]).click(function(event) {
     $(cita[0]).fadeOut({
       duration:500,
@@ -251,6 +252,7 @@ $(document).ready(function() {
         sl += d
       }
       $($slideFotos[indexFotos]).scrollLeft(sl)
+      sl = $($slideFotos[indexFotos]).scrollLeft()
     }, 1000/25)
   });
     $resultado.mouseleave(function(event) {
@@ -335,6 +337,7 @@ $(document).ready(function() {
       $inputFeliz = $("input[name=feliz]", "#cap6")
       $listaFeliz = $("ul", "#feliz")
       $agregarFeliz = $(".agregar", "#cap6")
+      $detalle = $(".detalle", "#cap6")
   var $fCerrar = $("nada");
       indexActual = 0
       items = 0
@@ -348,6 +351,7 @@ $(document).ready(function() {
     $(this).hide()
     $secTesoro.hide()
     $capBtn.fadeIn("fast")
+    $detalle.delay(500).fadeIn(500)
   });
   $base.on("click", function(event) {
     var index = $base.index(this)
@@ -359,6 +363,7 @@ $(document).ready(function() {
       $($secTesoro[5]).fadeIn(500).css('display', 'block');
     }
     $capBtn.fadeOut("fast")
+    $detalle.fadeOut(500)
   });
   var $li
   $inputFeliz.keypress(function(event) {
