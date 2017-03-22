@@ -237,27 +237,26 @@ $(document).ready(function() {
   });
   var interScroll
   var mx
-  var mx
-  $resultado.mousemove(function(e) {
-    mx = e.pageX
-  });
-  $resultado.mouseenter(function(event) {
-    var w = $(this).width()
+  var d = 25
+  var $slideBtn = $(".slide>span", "#cap3")
+  $slideBtn.mousedown(function(event) {
     var sl = $($slideFotos[indexFotos]).scrollLeft()
+    var index = $slideBtn.index(this)
     interScroll = setInterval(function(){
-      var d = 20
-      if (mx < w/2 - 150) {
+
+      if (index % 2 == 0) {
         sl -= d
-      } else if (mx > w/2 + 150) {
+      } else {
         sl += d
       }
       $($slideFotos[indexFotos]).scrollLeft(sl)
       sl = $($slideFotos[indexFotos]).scrollLeft()
     }, 1000/25)
   });
-    $resultado.mouseleave(function(event) {
+    $slideBtn.mouseup(function(event) {
       clearInterval(interScroll)
     });
+
   cerrarFotos.click(function(event) {
     $($resultado[indexFotos]).removeClass('mostrar');
     $capBtn.fadeIn('fast');
@@ -277,8 +276,8 @@ $(document).ready(function() {
         target = $mask[index+1]
 
     if( revelable[index] === true) {
-      $(this).mousemove(function(event) {
-        countOpacity[index] += 0.008
+      $(this).click(function(event) {
+        countOpacity[index] += 0.55
         $(target).css('opacity', countOpacity[index])
         var llenar = $(target).css('opacity')
         if (llenar >= 1) {
