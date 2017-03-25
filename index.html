@@ -80,7 +80,7 @@ var isMobile = {
 
   if(isMobile.any() || !navigator.sayswho.match("Chrome")){
     $(".selec").remove()
-    if(!isMobile.any){
+    if(!isMobile.any()){
       $(".alertaN").css("display", "block")
     } else {
       $(".alertaM").css("display", "block")
