@@ -50,6 +50,7 @@ function encenderAudio(audio, maxVol = 1){
 }
 
 $(document).ready(function() {
+
   var $audioFondo = $("audio")[0];
   $(window).load(function(){
     $("#load").delay(1000).fadeOut(1000);

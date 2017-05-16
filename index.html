@@ -5,12 +5,84 @@
     <title>Recrear: Cuba</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="icon" href="images/favicon.png" type="image/png">
+    <script src="js/libs/jquery.min.js"></script>
   </head>
   <body class="idioma">
+    <style media="screen">
+      #alert{
+        position: fixed;
+        z-index: 100;
+        width: 90%;
+        padding: 50px;
+        color:white
+      }
+      #alert .alertN, #alert .alertM{
+        display: none
+      }
+    </style>
+    <div id="alert">
+      <div class="alertM">Detectamos que estas usando un dispositivo móvil, este sitio está diseñado para navegar desde pantallas más grandes,
+       por favor accede desde un PC de escritorio o portatil usando Google Chrome para una mejor experiencia, ¡Gracias!</div>
+      <div class="alertN">Navegador</div>
+    </div>
     <div class="selec">
       <h1>Idioma / Language</h1>
       <a href="es.html"></a>
       <a href="en.html"></a>
     </div>
+
+    <script type="text/javascript">
+      navigator.sayswho= (function(){
+        var ua= navigator.userAgent, tem,
+        M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if(/trident/i.test(M[1])){
+            tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+            noSoporte = true
+            return 'IE '+(tem[1] || '');
+        }
+        if(M[1]=== 'Chrome'){
+            tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+            if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+        }
+        M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+        if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+        return M.join(' ');
+      })();
+
+      var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile|NokiaN9/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+      };
+
+      if (isMobile.any() || !navigator.sayswho.match(/Chrome|Safari/i) ) {
+        $('.selec').remove()
+        if (!isMobile.any()) {
+          $('.alertN').css('display', 'block');
+        } else {
+          $('.alertM').css('display', 'block');
+        }
+      } else {
+        $('#alert').remove()
+      }
+    </script>
+
+
+
   </body>
 </html>
